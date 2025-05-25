@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 手机摄像头等效光圈对比网站
 
-## Getting Started
+这是一个模仿 [socpk.com](https://www.socpk.com/cpucurve/gb6/) 设计的手机摄像头等效光圈对比网站。
 
-First, run the development server:
+## 功能特点
 
+- 📊 交互式等效光圈曲线图表
+- 📱 多品牌手机型号展示（小米、三星、苹果等）
+- 🎨 现代化黑色主题设计
+- 📱 响应式设计，支持移动端
+- ⚡ 基于 Next.js 构建，性能优异
+
+## 技术栈
+
+- **框架**: Next.js 15 + TypeScript
+- **样式**: Tailwind CSS
+- **图表**: Chart.js + react-chartjs-2
+- **部署**: Vercel
+
+## 本地开发
+
+1. 安装依赖：
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. 启动开发服务器：
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 部署到 Vercel
 
-## Learn More
+1. 将代码推送到 GitHub
+2. 在 Vercel 中导入项目
+3. 自动部署完成
 
-To learn more about Next.js, take a look at the following resources:
+## 数据结构
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+网站展示的数据包括：
+- 手机型号名称
+- 发布时间
+- 等效光圈范围
+- 等效焦段范围
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 自定义数据
 
-## Deploy on Vercel
+可以在 `app/page.tsx` 中的 `phoneData` 对象中修改手机数据，在 `chartData` 中修改图表数据。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 许可证
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License

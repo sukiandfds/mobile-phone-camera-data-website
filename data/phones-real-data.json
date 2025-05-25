@@ -1,0 +1,1602 @@
+{
+  "xiaomi": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ],
+  "vivo": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ],
+  "oppo": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ],
+  "apple": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ],
+  "samsung": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ],
+  "huawei": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ],
+  "honor": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ],
+  "nubia": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony IMX989",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.9",
+        "equivalentAperture": "f/5.0"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 60,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.9"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/3.0",
+        "equivalentAperture": "f/18.6"
+      }
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 12,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/10.6"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 75,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 120,
+        "aperture": "f/2.5",
+        "equivalentAperture": "f/15.5"
+      }
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra",
+      "ultraWide": {
+        "sensor": "Samsung S5KJN5",
+        "sensorSize": "1/2.76",
+        "focalLength": 14,
+        "aperture": "f2.2",
+        "equivalentAperture": "f/15.2"
+      },
+      "main": {
+        "sensor": "Sony LYT-900",
+        "sensorSize": "1/0.98",
+        "focalLength": 23,
+        "aperture": "f1.63",
+        "equivalentAperture": "f/4.3"
+      },
+      "telephoto": {
+        "sensor": "Sony IMX858",
+        "sensorSize": "1/2.51",
+        "focalLength": 70,
+        "aperture": "f1.8",
+        "equivalentAperture": "f/11.3"
+      },
+      "superTelephoto": {
+        "sensor": "Samsung S5KHP9",
+        "sensorSize": "1/1.4",
+        "focalLength": 100,
+        "aperture": "f/2.6",
+        "equivalentAperture": "f/10.4"
+      }
+    }
+  ]
+}

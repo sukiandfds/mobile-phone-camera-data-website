@@ -1,0 +1,258 @@
+{
+  "xiaomi": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ],
+  "vivo": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ],
+  "oppo": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ],
+  "apple": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ],
+  "samsung": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ],
+  "huawei": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ],
+  "honor": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ],
+  "nubia": [
+    {
+      "name": "小米13ultra",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米13pro",
+      "releaseDate": "2023年4月18日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14ultra",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米14pro",
+      "releaseDate": "2024 年 2 月 22 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15ultra",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    },
+    {
+      "name": "小米15pro",
+      "releaseDate": "2025 年 2 月 27 日",
+      "level": "ultra"
+    }
+  ]
+}

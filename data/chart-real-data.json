@@ -1,0 +1,781 @@
+{
+  "labels": [
+    "13mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "77mm",
+    "120mm",
+    "200mm"
+  ],
+  "datasets": [
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FF6B35",
+      "backgroundColor": "rgba(255, 107, 53, 0.1)",
+      "tension": 0.4,
+      "brand": "xiaomi"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FF8A50",
+      "backgroundColor": "rgba(255, 138, 80, 0.1)",
+      "tension": 0.4,
+      "brand": "xiaomi"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFA726",
+      "backgroundColor": "rgba(255, 167, 38, 0.1)",
+      "tension": 0.4,
+      "brand": "xiaomi"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFB74D",
+      "backgroundColor": "rgba(255, 183, 77, 0.1)",
+      "tension": 0.4,
+      "brand": "xiaomi"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFCC80",
+      "backgroundColor": "rgba(255, 204, 128, 0.1)",
+      "tension": 0.4,
+      "brand": "xiaomi"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FF6B35",
+      "backgroundColor": "rgba(255, 107, 53, 0.1)",
+      "tension": 0.4,
+      "brand": "xiaomi"
+    },
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#8E24AA",
+      "backgroundColor": "rgba(142, 36, 170, 0.1)",
+      "tension": 0.4,
+      "brand": "vivo"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#AB47BC",
+      "backgroundColor": "rgba(171, 71, 188, 0.1)",
+      "tension": 0.4,
+      "brand": "vivo"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#BA68C8",
+      "backgroundColor": "rgba(186, 104, 200, 0.1)",
+      "tension": 0.4,
+      "brand": "vivo"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#CE93D8",
+      "backgroundColor": "rgba(206, 147, 216, 0.1)",
+      "tension": 0.4,
+      "brand": "vivo"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#E1BEE7",
+      "backgroundColor": "rgba(225, 190, 231, 0.1)",
+      "tension": 0.4,
+      "brand": "vivo"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#8E24AA",
+      "backgroundColor": "rgba(142, 36, 170, 0.1)",
+      "tension": 0.4,
+      "brand": "vivo"
+    },
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#43A047",
+      "backgroundColor": "rgba(67, 160, 71, 0.1)",
+      "tension": 0.4,
+      "brand": "oppo"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#66BB6A",
+      "backgroundColor": "rgba(102, 187, 106, 0.1)",
+      "tension": 0.4,
+      "brand": "oppo"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#81C784",
+      "backgroundColor": "rgba(129, 199, 132, 0.1)",
+      "tension": 0.4,
+      "brand": "oppo"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#A5D6A7",
+      "backgroundColor": "rgba(165, 214, 167, 0.1)",
+      "tension": 0.4,
+      "brand": "oppo"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#C8E6C9",
+      "backgroundColor": "rgba(200, 230, 201, 0.1)",
+      "tension": 0.4,
+      "brand": "oppo"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#43A047",
+      "backgroundColor": "rgba(67, 160, 71, 0.1)",
+      "tension": 0.4,
+      "brand": "oppo"
+    },
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#1E88E5",
+      "backgroundColor": "rgba(30, 136, 229, 0.1)",
+      "tension": 0.4,
+      "brand": "apple"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#42A5F5",
+      "backgroundColor": "rgba(66, 165, 245, 0.1)",
+      "tension": 0.4,
+      "brand": "apple"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#64B5F6",
+      "backgroundColor": "rgba(100, 181, 246, 0.1)",
+      "tension": 0.4,
+      "brand": "apple"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#90CAF9",
+      "backgroundColor": "rgba(144, 202, 249, 0.1)",
+      "tension": 0.4,
+      "brand": "apple"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#BBDEFB",
+      "backgroundColor": "rgba(187, 222, 251, 0.1)",
+      "tension": 0.4,
+      "brand": "apple"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#1E88E5",
+      "backgroundColor": "rgba(30, 136, 229, 0.1)",
+      "tension": 0.4,
+      "brand": "apple"
+    },
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#E53935",
+      "backgroundColor": "rgba(229, 57, 53, 0.1)",
+      "tension": 0.4,
+      "brand": "samsung"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#EF5350",
+      "backgroundColor": "rgba(239, 83, 80, 0.1)",
+      "tension": 0.4,
+      "brand": "samsung"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#F44336",
+      "backgroundColor": "rgba(244, 67, 54, 0.1)",
+      "tension": 0.4,
+      "brand": "samsung"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#EF5350",
+      "backgroundColor": "rgba(239, 83, 80, 0.1)",
+      "tension": 0.4,
+      "brand": "samsung"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFCDD2",
+      "backgroundColor": "rgba(255, 205, 210, 0.1)",
+      "tension": 0.4,
+      "brand": "samsung"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#E53935",
+      "backgroundColor": "rgba(229, 57, 53, 0.1)",
+      "tension": 0.4,
+      "brand": "samsung"
+    },
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#F57C00",
+      "backgroundColor": "rgba(245, 124, 0, 0.1)",
+      "tension": 0.4,
+      "brand": "huawei"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FF9800",
+      "backgroundColor": "rgba(255, 152, 0, 0.1)",
+      "tension": 0.4,
+      "brand": "huawei"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFB74D",
+      "backgroundColor": "rgba(255, 183, 77, 0.1)",
+      "tension": 0.4,
+      "brand": "huawei"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFCC80",
+      "backgroundColor": "rgba(255, 204, 128, 0.1)",
+      "tension": 0.4,
+      "brand": "huawei"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFE0B2",
+      "backgroundColor": "rgba(255, 224, 178, 0.1)",
+      "tension": 0.4,
+      "brand": "huawei"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#F57C00",
+      "backgroundColor": "rgba(245, 124, 0, 0.1)",
+      "tension": 0.4,
+      "brand": "huawei"
+    },
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#7B1FA2",
+      "backgroundColor": "rgba(123, 31, 162, 0.1)",
+      "tension": 0.4,
+      "brand": "honor"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#9C27B0",
+      "backgroundColor": "rgba(156, 39, 176, 0.1)",
+      "tension": 0.4,
+      "brand": "honor"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#BA68C8",
+      "backgroundColor": "rgba(186, 104, 200, 0.1)",
+      "tension": 0.4,
+      "brand": "honor"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#CE93D8",
+      "backgroundColor": "rgba(206, 147, 216, 0.1)",
+      "tension": 0.4,
+      "brand": "honor"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#E1BEE7",
+      "backgroundColor": "rgba(225, 190, 231, 0.1)",
+      "tension": 0.4,
+      "brand": "honor"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#7B1FA2",
+      "backgroundColor": "rgba(123, 31, 162, 0.1)",
+      "tension": 0.4,
+      "brand": "honor"
+    },
+    {
+      "label": "小米13ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#D32F2F",
+      "backgroundColor": "rgba(211, 47, 47, 0.1)",
+      "tension": 0.4,
+      "brand": "nubia"
+    },
+    {
+      "label": "小米13pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#F44336",
+      "backgroundColor": "rgba(244, 67, 54, 0.1)",
+      "tension": 0.4,
+      "brand": "nubia"
+    },
+    {
+      "label": "小米14ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#EF5350",
+      "backgroundColor": "rgba(239, 83, 80, 0.1)",
+      "tension": 0.4,
+      "brand": "nubia"
+    },
+    {
+      "label": "小米14pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#E57373",
+      "backgroundColor": "rgba(229, 115, 115, 0.1)",
+      "tension": 0.4,
+      "brand": "nubia"
+    },
+    {
+      "label": "小米15ultra",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#FFCDD2",
+      "backgroundColor": "rgba(255, 205, 210, 0.1)",
+      "tension": 0.4,
+      "brand": "nubia"
+    },
+    {
+      "label": "小米15pro",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "borderColor": "#D32F2F",
+      "backgroundColor": "rgba(211, 47, 47, 0.1)",
+      "tension": 0.4,
+      "brand": "nubia"
+    }
+  ]
+}
