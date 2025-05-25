@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import {  Chart as ChartJS,  CategoryScale,  LinearScale,  PointElement,  LineElement,  Title,  Tooltip,  Legend, LogarithmicScale} from 'chart.js';
+import {  Chart as ChartJS,  CategoryScale,  LinearScale,  PointElement,  LineElement,  Title,  Tooltip,  Legend, LogarithmicScale, ScriptableContext, TooltipItem } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -35,11 +35,13 @@ interface LensInfo {
   focalLength: number;
   aperture: number;
   type: string;
+  physicalApertureValue?: number;
+  conversionFactor?: number;
 }
 
 interface ChartDataset {
   label: string;
-  data: Array<{ x: number; y: number; details: LensDetail | null | { note: string, [key: string]: any }; originalFocalLength: number; pointType?: string } | number | null>;
+  data: Array<{ x: number; y: number; details: LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | null }; originalFocalLength: number; pointType?: string } | number | null>;
   borderColor: string;
   backgroundColor: string;
   tension: number;
@@ -169,7 +171,7 @@ export default function PhoneCameraComparison() {
           // Transform datasets for linear X-axis and native lens points
           const transformedDatasets = loadedChartData.datasets.map(dataset => {
             const originalLenses = dataset.originalLenses || [];
-            const newPoints: Array<{ x: number; y: number; details: any; originalFocalLength: number; pointType: string }> = [];
+            const newPoints: Array<{ x: number; y: number; details: LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | null }; originalFocalLength: number; pointType: string }> = [];
             
             const MAJOR_FOCAL_LENGTHS_NUM = MAJOR_FOCAL_LENGTHS.length > 0 
                 ? MAJOR_FOCAL_LENGTHS 
@@ -188,7 +190,7 @@ export default function PhoneCameraComparison() {
                 newPoints.push({
                   x: transformFocalLengthToXCoordinate(currentLens.focalLength, MAJOR_FOCAL_LENGTHS_NUM),
                   y: currentLens.aperture,
-                  details: currentLens,
+                  details: { note: 'Actual lens data', ...currentLens },
                   originalFocalLength: currentLens.focalLength,
                   pointType: 'actual'
                 });
@@ -202,15 +204,15 @@ export default function PhoneCameraComparison() {
 
                   // 2. Add theoretical end point T_i
                   let y_theoretical_end_i = currentLens.aperture; // Default
-                  if (typeof (currentLens as any).physicalApertureValue === 'number' &&
-                      typeof (currentLens as any).conversionFactor === 'number' &&
+                  if (typeof currentLens.physicalApertureValue === 'number' &&
+                      typeof currentLens.conversionFactor === 'number' &&
                       currentLens.focalLength !== 0) {
-                    y_theoretical_end_i = ((currentLens as any).physicalApertureValue * (currentLens as any).conversionFactor / currentLens.focalLength) * nextLens.focalLength;
+                    y_theoretical_end_i = (currentLens.physicalApertureValue * currentLens.conversionFactor / currentLens.focalLength) * nextLens.focalLength;
                   }
                   newPoints.push({
                     x: transformFocalLengthToXCoordinate(nextLens.focalLength, MAJOR_FOCAL_LENGTHS_NUM),
                     y: y_theoretical_end_i,
-                    details: { ...currentLens, note: `Theoretical projection to ${nextLens.focalLength}mm based on ${currentLens.focalLength}mm lens (${dataset.label})` },
+                    details: { ...(currentLens as LensInfo), note: `Theoretical projection to ${nextLens.focalLength}mm based on ${currentLens.focalLength}mm lens (${dataset.label})` },
                     originalFocalLength: nextLens.focalLength,
                     pointType: 'theoretical_end'
                   });
@@ -219,7 +221,7 @@ export default function PhoneCameraComparison() {
                   newPoints.push({
                     x: transformFocalLengthToXCoordinate(nextLens.focalLength, MAJOR_FOCAL_LENGTHS_NUM),
                     y: nextLens.aperture,
-                    details: nextLens,
+                    details: { note: 'Next lens actual data', ...nextLens },
                     originalFocalLength: nextLens.focalLength,
                     pointType: 'actual_for_vertical_line'
                   });
@@ -227,15 +229,15 @@ export default function PhoneCameraComparison() {
                 } else { // If it IS the last lens
                   const FOCAL_LENGTH_AT_END = 200;
                   let y_at_200mm = currentLens.aperture; // Default
-                  if (typeof (currentLens as any).physicalApertureValue === 'number' &&
-                      typeof (currentLens as any).conversionFactor === 'number' &&
+                  if (typeof currentLens.physicalApertureValue === 'number' &&
+                      typeof currentLens.conversionFactor === 'number' &&
                       currentLens.focalLength !== 0) {
-                    y_at_200mm = ((currentLens as any).physicalApertureValue * (currentLens as any).conversionFactor / currentLens.focalLength) * FOCAL_LENGTH_AT_END;
+                    y_at_200mm = (currentLens.physicalApertureValue * currentLens.conversionFactor / currentLens.focalLength) * FOCAL_LENGTH_AT_END;
                   }
                   newPoints.push({
                     x: transformFocalLengthToXCoordinate(FOCAL_LENGTH_AT_END, MAJOR_FOCAL_LENGTHS_NUM),
                     y: y_at_200mm,
-                    details: { ...currentLens, note: `Theoretical projection to ${FOCAL_LENGTH_AT_END}mm (${dataset.label})` },
+                    details: { ...(currentLens as LensInfo), note: `Theoretical projection to ${FOCAL_LENGTH_AT_END}mm (${dataset.label})` },
                     originalFocalLength: FOCAL_LENGTH_AT_END,
                     pointType: 'theoretical_extension_to_200mm'
                   });
@@ -347,23 +349,23 @@ export default function PhoneCameraComparison() {
         tension: 0, // Straight lines
       },
       point: {
-        radius: (context: any) => {
-          const pointType = context.raw?.pointType;
-          if (pointType === 'actual') {
+        radius: (context: ScriptableContext<'line'>) => {
+          const rawData = context.raw as { pointType?: string };
+          if (rawData?.pointType === 'actual') {
             return 3; // Visible radius for actual points
           }
           return 0; // Invisible for theoretical/connector points
         },
-        hoverRadius: (context: any) => {
-          const pointType = context.raw?.pointType;
-          if (pointType === 'actual') {
+        hoverRadius: (context: ScriptableContext<'line'>) => {
+          const rawData = context.raw as { pointType?: string };
+          if (rawData?.pointType === 'actual') {
             return 5; // Larger radius on hover for actual points
           }
           return 0;
         },
-        hitRadius: (context: any) => {
-          const pointType = context.raw?.pointType;
-          if (pointType === 'actual') {
+        hitRadius: (context: ScriptableContext<'line'>) => {
+          const rawData = context.raw as { pointType?: string };
+          if (rawData?.pointType === 'actual') {
             return 10; // Larger hit area for actual points
           }
           return 0;
@@ -488,9 +490,9 @@ export default function PhoneCameraComparison() {
       tooltip: {
         enabled: true,
         callbacks: {
-          title: function(tooltipItems: any[]) {
+          title: function(tooltipItems: TooltipItem<'line'>[]) {
             // 只显示实际点位的机型名称
-            const actualItems = tooltipItems.filter(item => item.raw?.pointType === 'actual');
+            const actualItems = tooltipItems.filter(item => (item.raw as { pointType?: string })?.pointType === 'actual');
             if (actualItems.length > 0) {
               if (actualItems.length === 1) {
                 return actualItems[0].dataset.label || '';
@@ -498,65 +500,59 @@ export default function PhoneCameraComparison() {
             }
             
             // 如果没有实际点位，检查理论点
-            const theoreticalItems = tooltipItems.filter(item => item.raw?.details?.note);
-            if (theoreticalItems.length > 0) {
-              return theoreticalItems[0].raw.details.note;
+            const theoreticalItems = tooltipItems.filter(item => (item.raw as { details?: { note?: string } })?.details?.note);
+            if (theoreticalItems.length > 0 && (theoreticalItems[0].raw as { details?: { note?: string } })?.details) { 
+              return ((theoreticalItems[0].raw as { details: { note: string } }).details).note;
             }
             
             return '';
           },
-          label: function(context: any) {
-            const pointType = context.raw?.pointType;
+          label: function(context: TooltipItem<'line'>) {
+            const rawData = context.raw as { pointType?: string, details?: LensDetail | null | { note: string, [key: string]: any }, originalFocalLength?: number }; 
+            const pointType = rawData?.pointType;
+
             if (pointType !== 'actual') {
-                 // For non-actual points, if there's a note in title, label can be simple or empty
-                if (context.raw?.details?.note) return `Y: ${context.parsed.y.toFixed(1)}`;
-                return ''; // No detailed label for non-actual points unless specified
+                if (rawData?.details && 'note' in rawData.details && typeof (rawData.details as { note: string }).note === 'string') return `Y: ${context.parsed.y.toFixed(1)}`;
+                return '';
             }
 
-            const details = context.raw?.details as any;
+            const details = rawData?.details as { note: string, focalLength?: number, physicalApertureValue?: number, [key: string]: any }; 
             if (!details) return '';
 
             const label = [];
             
-            // 如果有多个重叠点，添加机型标识
-            const allTooltipItems = context.chart.tooltip.dataPoints || [context];
-            const actualItems = allTooltipItems.filter((item: any) => item.raw?.pointType === 'actual');
-            if (actualItems.length > 1) {
+            const allTooltipItems = (context.chart as any).tooltip.dataPoints || [context]; // context.chart.tooltip may not exist, keep as any for now or find specific type
+            const actualItemsFromChart = allTooltipItems.filter((item: TooltipItem<'line'>) => (item.raw as { pointType?: string })?.pointType === 'actual');
+            if (actualItemsFromChart.length > 1) {
               label.push(` ${context.dataset.label}`);
             }
             
-            // 获取传感器信息 - 从dataset的lensDetails中获取
-            const dataset = context.dataset;
-            const focalLength = details.originalFocalLength || details.focalLength;
-            const lensDetail = dataset.lensDetails?.[focalLength.toString()];
+            const dataset = context.dataset as ChartDataset; 
+            const focalLengthToLookup = rawData?.originalFocalLength || details?.focalLength;
+            const lensDetail = focalLengthToLookup ? dataset.lensDetails?.[focalLengthToLookup.toString()] : undefined;
             
-            // 1. 传感器名称
             if (lensDetail?.sensor) {
               label.push(`传感器: ${lensDetail.sensor}`);
             }
             
-            // 2. 传感器尺寸
             if (lensDetail?.sensorSize) {
               label.push(`传感器尺寸: ${lensDetail.sensorSize}`);
             }
             
-            // 3. 等效焦距
-            const equivalentFocalLength = details.originalFocalLength || details.focalLength;
+            const equivalentFocalLength = rawData?.originalFocalLength || details?.focalLength;
             if (equivalentFocalLength) {
               label.push(`等效焦距: ${equivalentFocalLength}mm`);
             }
             
-            // 4. 镜头光圈 (物理光圈)
-            if (details.physicalApertureValue) {
+            if (details?.physicalApertureValue) {
               label.push(`镜头光圈: f/${details.physicalApertureValue}`);
             }
             
-            // 5. 等效光圈
             label.push(`等效光圈: F${context.parsed.y.toFixed(1)}`);
 
             return label;
           },
-          afterLabel: function(context: any) {
+          afterLabel: function(_context: TooltipItem<'line'>) {
             return '';
           }
         }
@@ -720,7 +716,7 @@ export default function PhoneCameraComparison() {
     if (dataset) {
       const originalLens = dataset.originalLenses.find(l => 
         l.focalLength === bestLens.focalLength && l.aperture === bestLens.aperture
-      ) as any;
+      );
 
       if (originalLens?.physicalApertureValue && originalLens?.conversionFactor) {
         // 使用物理参数计算：等效光圈 = 物理光圈 × 转换系数 × (目标焦距 / 原始焦距)
@@ -944,7 +940,7 @@ export default function PhoneCameraComparison() {
                       <div className="mt-4 text-xs text-gray-400">
                         <p>• <strong>粗体</strong>：原生镜头焦段的实际等效光圈值</p>
                         <p>• 普通字体：基于物理参数计算的理论等效光圈值</p>
-                        <p>• "-"：无法计算（目标焦段比该机型最广角镜头更广）</p>
+                        <p>• &quot;-&quot;：无法计算（目标焦段比该机型最广角镜头更广）</p>
                       </div>
                     </div>
                   ) : (
