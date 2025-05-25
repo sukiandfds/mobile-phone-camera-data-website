@@ -164,3 +164,6 @@ export const phoneData = {
 export const chartDatasets: ChartDataPoint[] = [
   // 这里可以添加具体的图表数据点，暂时留空
 ];
+
+// 图表X轴标签
+export const chartLabels: string[] = ['13mm', '24mm', '35mm', '50mm', '77mm', '120mm', '200mm'];
