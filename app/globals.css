@@ -19,3 +19,79 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* 自定义滚动条样式 */
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #4a5568 #2d3748;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #2d3748;
+  border-radius: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+  border: 1px solid #2d3748;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+.scrollbar-custom::-webkit-scrollbar-corner {
+  background: #2d3748;
+}

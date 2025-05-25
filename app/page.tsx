@@ -145,6 +145,10 @@ export default function PhoneCameraComparison() {
   const [visibleDatasets, setVisibleDatasets] = useState<Set<string>>(new Set());
   const [viewMode, setViewMode] = useState<'chart' | 'table'>('chart');
   const [loading, setLoading] = useState(true);
+  const [expandedBrands, setExpandedBrands] = useState<Set<string>>(new Set());
+  const [showFilters, setShowFilters] = useState(false);
+  const [selectedYears, setSelectedYears] = useState<Set<number>>(new Set());
+  const [selectedBrands, setSelectedBrands] = useState<Set<string>>(new Set());
 
   // 加载数据
   useEffect(() => {
@@ -583,12 +587,94 @@ export default function PhoneCameraComparison() {
     setVisibleDatasets(allPhoneLabels);
   };
 
-  // 获取品牌的机型列表 - 简化，不再需要 expandedBrands
+  // 获取所有可用年份
+  const getAvailableYears = () => {
+    const years = new Set<number>();
+    Object.values(phoneData).flat().forEach(phone => {
+      if (phone.releaseYear) {
+        years.add(phone.releaseYear);
+      }
+    });
+    return Array.from(years).sort((a, b) => b - a);
+  };
+
+  // 获取所有可用品牌
+  const getAvailableBrands = () => {
+    return Object.keys(phoneData).filter(brand => phoneData[brand].length > 0);
+  };
+
+  // 切换年份选择
+  const toggleYear = (year: number) => {
+    const newYears = new Set(selectedYears);
+    if (newYears.has(year)) {
+      newYears.delete(year);
+    } else {
+      newYears.add(year);
+    }
+    setSelectedYears(newYears);
+  };
+
+  // 切换品牌选择
+  const toggleBrand = (brand: string) => {
+    const newBrands = new Set(selectedBrands);
+    if (newBrands.has(brand)) {
+      newBrands.delete(brand);
+    } else {
+      newBrands.add(brand);
+    }
+    setSelectedBrands(newBrands);
+  };
+
+  // 应用筛选
+  const applyFilters = () => {
+    const filteredPhoneLabels = new Set<string>();
+    
+    chartData.datasets.forEach(dataset => {
+      const phone = Object.values(phoneData).flat().find(p => p.name === dataset.label);
+      if (phone) {
+        const yearMatch = selectedYears.size === 0 || selectedYears.has(phone.releaseYear);
+        const brandMatch = selectedBrands.size === 0 || selectedBrands.has(dataset.brand);
+        
+        if (yearMatch && brandMatch) {
+          filteredPhoneLabels.add(dataset.label);
+        }
+      }
+    });
+    
+    setVisibleDatasets(filteredPhoneLabels);
+    setShowFilters(false);
+  };
+
+  // 清除筛选
+  const clearFilters = () => {
+    setSelectedYears(new Set());
+    setSelectedBrands(new Set());
+  };
+
+  // 切换品牌展开状态
+  const toggleBrandExpansion = (brand: string) => {
+    const newExpanded = new Set(expandedBrands);
+    if (newExpanded.has(brand)) {
+      newExpanded.delete(brand);
+    } else {
+      newExpanded.add(brand);
+    }
+    setExpandedBrands(newExpanded);
+  };
+
+  // 获取品牌的机型列表
   const getBrandPhones = (brand: string) => {
     const brandPhones = phoneData[brand] || [];
-    return brandPhones
+    const sortedPhones = brandPhones
       .filter(phone => phone.releaseYear) // Ensure releaseYear exists for sorting
       .sort((a, b) => b.releaseYear - a.releaseYear); // Sort by release year, newest first
+    
+    // 如果品牌未展开，只显示前4个
+    if (!expandedBrands.has(brand)) {
+      return sortedPhones.slice(0, 4);
+    }
+    
+    return sortedPhones;
   };
 
   // 计算特定焦距的等效光圈
@@ -704,45 +790,53 @@ export default function PhoneCameraComparison() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5 -z-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.1) 35px, rgba(255,255,255,0.1) 70px)`,
+        }}></div>
+      </div>
       {/* Top Navigation / Header Area */}
-      <header className="sticky top-0 z-20 bg-black/80 backdrop-blur-md">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          {/* Left: Back Button */}
-          <button 
-            onClick={() => window.history.back()}
-            className="p-2 rounded-full hover:bg-gray-700 transition-colors"
-            aria-label="返回"
-          >
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-
-          {/* Center: Titles */}
-          <div className="text-center">
-            <h1 className="text-xl sm:text-2xl font-bold">手机后置摄像头 - 等效光圈</h1>
-            <p className="text-xs sm:text-sm text-gray-400">部分手机的后置摄像头的等效光圈</p>
+      <header className="relative z-20">
+        <div className="container mx-auto px-4 py-6">
+          {/* Back Button */}
+          <div className="absolute left-4 top-6">
+            <button 
+              onClick={() => window.history.back()}
+              className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors flex items-center justify-center"
+              aria-label="返回"
+            >
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
           </div>
 
-          {/* Right: View Mode Buttons */}
-          <div className="flex items-center gap-2">
+          {/* Center: Titles */}
+          <div className="text-center px-12">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">手机后置摄像头 - 等效光圈</h1>
+            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">部分手机的后置摄像头的等效光圈</p>
+          </div>
+
+          {/* View Mode Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-3 mt-6">
             <button
               onClick={() => setViewMode('chart')}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors border ${
                 viewMode === 'chart'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  ? 'bg-cyan-500 text-white border-cyan-500'
+                  : 'bg-transparent text-cyan-400 border-cyan-400 hover:bg-cyan-500/10'
               }`}
             >
               查看曲线
             </button>
             <button
               onClick={() => setViewMode('table')}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors border ${
                 viewMode === 'table'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  ? 'bg-cyan-500 text-white border-cyan-500'
+                  : 'bg-transparent text-cyan-400 border-cyan-400 hover:bg-cyan-500/10'
               }`}
             >
               查看表格
@@ -752,7 +846,7 @@ export default function PhoneCameraComparison() {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-grow container mx-auto px-4 py-6">
+      <main className="flex-grow container mx-auto px-4 sm:px-6 py-6 relative z-10">
         {loading ? (
           <div className="flex items-center justify-center h-full">
             <div className="text-white text-xl">加载中...</div>
@@ -760,73 +854,93 @@ export default function PhoneCameraComparison() {
         ) : (
           <>
             {/* Chart Area / Table Area */}
-            <section className="mb-6">
+            <section className="mb-8 animate-fade-in">
               {viewMode === 'chart' ? (
-                <div className="bg-gray-900 rounded-lg p-4 sm:p-6 h-[50vh] sm:h-[60vh] md:h-[70vh]">
-                  {MAJOR_FOCAL_LENGTHS.length > 0 ? ( // Ensure MAJOR_FOCAL_LENGTHS is populated
-                    <Line data={chartDataForRender} options={chartOptions} />
-                  ) : (
-                    <div className="text-white text-center">图表数据仍在加载或初始化...</div>
-                  )}
+                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800 animate-scale-in">
+                  <div className="h-[60vh] sm:h-[65vh] md:h-[70vh]">
+                    {MAJOR_FOCAL_LENGTHS.length > 0 ? ( // Ensure MAJOR_FOCAL_LENGTHS is populated
+                      <Line data={chartDataForRender} options={chartOptions} />
+                    ) : (
+                      <div className="text-white text-center flex items-center justify-center h-full">
+                        <div className="text-lg">图表数据仍在加载或初始化...</div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ) : (
                 // 等效光圈数据表格
-                <div className="bg-gray-900 rounded-lg p-4 sm:p-6 overflow-x-auto">
+                <div className="bg-gray-900 rounded-lg p-4 sm:p-6 animate-scale-in">
                   <h3 className="text-xl font-semibold mb-4 text-white">等效光圈数据表格</h3>
                   {Object.keys(tableData).length > 0 ? (
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm text-white border-collapse">
-                        <thead>
-                          <tr>
-                            <th className="sticky left-0 bg-gray-800 border border-gray-600 px-3 py-2 text-left font-medium">
-                              机型
-                            </th>
-                            {getAllFocalLengths.map(focal => (
-                              <th key={focal} className="border border-gray-600 px-3 py-2 text-center font-medium min-w-[70px]">
-                                {focal}mm
+                    <div className="relative">
+                      {/* 滚动提示 */}
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-xs text-gray-400">
+                          <span className="hidden sm:inline">横向滚动查看更多数据</span>
+                          <span className="sm:hidden">左右滑动查看更多</span>
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          共 {getAllFocalLengths.length} 个焦段
+                        </div>
+                      </div>
+                      
+                      {/* 表格容器 */}
+                      <div className="overflow-x-auto scrollbar-custom touch-pan-x" style={{ WebkitOverflowScrolling: 'touch' }}>
+                        <table className="w-full text-sm text-white border-collapse min-w-max">
+                          <thead>
+                            <tr>
+                              <th className="sticky left-0 bg-gray-800 border border-gray-600 px-3 py-2 text-left font-medium z-20 shadow-lg min-w-[150px]">
+                                机型
                               </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {Object.entries(tableData).map(([phoneName, phoneData]) => {
-                            // 获取该手机的品牌和颜色
-                            const dataset = chartData.datasets.find(d => d.label === phoneName);
-                            const brandColor = dataset?.borderColor || '#ffffff';
-                            
-                            return (
-                              <tr key={phoneName} className="hover:bg-gray-800">
-                                <td 
-                                  className="sticky left-0 bg-gray-800 border border-gray-600 px-3 py-2 font-medium"
-                                  style={{ color: brandColor }}
-                                >
-                                  {phoneName}
-                                </td>
-                                {getAllFocalLengths.map(focal => {
-                                  const focalKey = `${focal}mm`;
-                                  const aperture = phoneData[focalKey];
-                                  const isNative = dataset?.originalLenses?.some(l => l.focalLength === focal);
-                                  
-                                  return (
-                                    <td key={focal} className="border border-gray-600 px-3 py-2 text-center">
-                                      {aperture !== null ? (
-                                        <span 
-                                          className={isNative ? 'font-bold' : 'opacity-75'}
-                                          title={isNative ? '原生焦段' : '计算值'}
-                                        >
-                                          F{aperture}
-                                        </span>
-                                      ) : (
-                                        <span className="text-gray-500">-</span>
-                                      )}
-                                    </td>
-                                  );
-                                })}
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
+                              {getAllFocalLengths.map(focal => (
+                                <th key={focal} className="border border-gray-600 px-3 py-2 text-center font-medium min-w-[80px] whitespace-nowrap">
+                                  {focal}mm
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {Object.entries(tableData).map(([phoneName, phoneData]) => {
+                              // 获取该手机的品牌和颜色
+                              const dataset = chartData.datasets.find(d => d.label === phoneName);
+                              const brandColor = dataset?.borderColor || '#ffffff';
+                              
+                              return (
+                                <tr key={phoneName} className="hover:bg-gray-800/50">
+                                  <td 
+                                    className="sticky left-0 bg-gray-800 border border-gray-600 px-3 py-2 font-medium z-10 shadow-lg min-w-[150px]"
+                                    style={{ color: brandColor }}
+                                  >
+                                    <div className="truncate" title={phoneName}>
+                                      {phoneName}
+                                    </div>
+                                  </td>
+                                  {getAllFocalLengths.map(focal => {
+                                    const focalKey = `${focal}mm`;
+                                    const aperture = phoneData[focalKey];
+                                    const isNative = dataset?.originalLenses?.some(l => l.focalLength === focal);
+                                    
+                                    return (
+                                      <td key={focal} className="border border-gray-600 px-3 py-2 text-center min-w-[80px] whitespace-nowrap">
+                                        {aperture !== null ? (
+                                          <span 
+                                            className={isNative ? 'font-bold' : 'opacity-75'}
+                                            title={isNative ? '原生焦段' : '计算值'}
+                                          >
+                                            F{aperture}
+                                          </span>
+                                        ) : (
+                                          <span className="text-gray-500">-</span>
+                                        )}
+                                      </td>
+                                    );
+                                  })}
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
                       <div className="mt-4 text-xs text-gray-400">
                         <p>• <strong>粗体</strong>：原生镜头焦段的实际等效光圈值</p>
                         <p>• 普通字体：基于物理参数计算的理论等效光圈值</p>
@@ -841,19 +955,128 @@ export default function PhoneCameraComparison() {
             </section>
 
             {/* Chart Control Buttons */}
-            <section className="mb-6 text-center">
-              <button
-                onClick={hideAll}
-                className="bg-black hover:bg-gray-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors mr-3 focus:outline-none focus:ring-2 focus:ring-gray-500"
-              >
-                全部隐藏
-              </button>
-              <button
-                onClick={showAll} 
-                className="bg-black hover:bg-gray-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500"
-              >
-                全部显示
-              </button>
+            <section className="mb-8 text-center relative z-10 animate-fade-in">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <div className="flex gap-4">
+                  <button
+                    type="button"
+                    onClick={hideAll}
+                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border focus:outline-none focus:ring-2 cursor-pointer transform hover:scale-105 ${
+                      visibleDatasets.size === 0
+                        ? 'bg-cyan-600 text-white border-cyan-600 focus:ring-cyan-500'
+                        : 'bg-gray-800 hover:bg-gray-700 text-white border-gray-600 focus:ring-gray-500'
+                    }`}
+                  >
+                    全部隐藏
+                  </button>
+                  <button
+                    type="button"
+                    onClick={showAll} 
+                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border focus:outline-none focus:ring-2 cursor-pointer transform hover:scale-105 ${
+                      visibleDatasets.size === chartData.datasets.length && chartData.datasets.length > 0
+                        ? 'bg-cyan-600 text-white border-cyan-600 focus:ring-cyan-500'
+                        : 'bg-gray-800 hover:bg-gray-700 text-white border-gray-600 focus:ring-gray-500'
+                    }`}
+                  >
+                    全部显示
+                  </button>
+                </div>
+                
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowFilters(!showFilters)}
+                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer transform hover:scale-105 ${
+                      showFilters || selectedYears.size > 0 || selectedBrands.size > 0
+                        ? 'bg-cyan-600 text-white border-cyan-600' 
+                        : 'bg-gray-800 hover:bg-gray-700 text-white border-gray-600'
+                    }`}
+                  >
+                    筛选
+                    {(selectedYears.size > 0 || selectedBrands.size > 0) && (
+                      <span className="ml-1 bg-white text-cyan-600 rounded-full px-1.5 py-0.5 text-xs font-bold">
+                        {selectedYears.size + selectedBrands.size}
+                      </span>
+                    )}
+                  </button>
+                  {(selectedYears.size > 0 || selectedBrands.size > 0) && (
+                    <button
+                      type="button"
+                      onClick={clearFilters}
+                      className="bg-red-600 hover:bg-red-700 text-white px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border border-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 cursor-pointer transform hover:scale-105 animate-scale-in"
+                    >
+                      清除
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              {/* 筛选面板 */}
+              {showFilters && (
+                <div className="mt-6 bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 border border-gray-700 max-w-4xl mx-auto animate-slide-down">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* 年份筛选 */}
+                    <div>
+                      <h4 className="text-lg font-medium text-white mb-3">发布年份</h4>
+                      <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                        {getAvailableYears().map(year => (
+                          <button
+                            key={year}
+                            type="button"
+                            onClick={() => toggleYear(year)}
+                            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 border transform hover:scale-105 ${
+                              selectedYears.has(year)
+                                ? 'bg-cyan-600 text-white border-cyan-600 shadow-lg'
+                                : 'bg-gray-800 hover:bg-gray-700 text-gray-300 border-gray-600'
+                            }`}
+                          >
+                            {year}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* 品牌筛选 */}
+                    <div>
+                      <h4 className="text-lg font-medium text-white mb-3">品牌</h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {getAvailableBrands().map(brand => (
+                          <button
+                            key={brand}
+                            type="button"
+                            onClick={() => toggleBrand(brand)}
+                            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 border transform hover:scale-105 ${
+                              selectedBrands.has(brand)
+                                ? 'bg-cyan-600 text-white border-cyan-600 shadow-lg'
+                                : 'bg-gray-800 hover:bg-gray-700 text-gray-300 border-gray-600'
+                            }`}
+                          >
+                            {BRAND_NAMES[brand as keyof typeof BRAND_NAMES] || brand}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 应用按钮 */}
+                  <div className="flex justify-center gap-4 mt-6">
+                    <button
+                      type="button"
+                      onClick={applyFilters}
+                      className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 transform hover:scale-105"
+                    >
+                      应用筛选
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowFilters(false)}
+                      className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transform hover:scale-105"
+                    >
+                      取消
+                    </button>
+                  </div>
+                </div>
+              )}
             </section>
 
             {/* Phone Selection Area (Pills) */}
@@ -862,12 +1085,37 @@ export default function PhoneCameraComparison() {
                 const brandPhones = getBrandPhones(brand); // This function needs to be adapted or replaced
                 if (brandPhones.length === 0) return null;
 
+                const allBrandPhones = phoneData[brand] || [];
+                const sortedAllPhones = allBrandPhones
+                  .filter(phone => phone.releaseYear)
+                  .sort((a, b) => b.releaseYear - a.releaseYear);
+                const hasMorePhones = sortedAllPhones.length > 4;
+                const isExpanded = expandedBrands.has(brand);
+
                 return (
-                  <div key={brand} className="mb-6">
-                    <h3 className="text-xl font-semibold mb-3 text-white border-b border-gray-700 pb-2">
-                      {BRAND_NAMES[brand as keyof typeof BRAND_NAMES] || brand}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
+                  <div key={brand} className="mb-8 animate-fade-in">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-lg font-medium text-white">
+                        {BRAND_NAMES[brand as keyof typeof BRAND_NAMES] || brand}
+                      </h3>
+                      {hasMorePhones && (
+                        <button
+                          onClick={() => toggleBrandExpansion(brand)}
+                          className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-all duration-200 flex items-center gap-1 transform hover:scale-105"
+                        >
+                          {isExpanded ? '收起' : `展开更多 (${sortedAllPhones.length - 4})`}
+                          <svg 
+                            className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
                       {brandPhones.map(phone => {
                         const isVisible = visibleDatasets.has(phone.name);
                         // Calculate focal range from originalLenses
@@ -890,25 +1138,22 @@ export default function PhoneCameraComparison() {
                           <button
                             key={phone.name}
                             onClick={() => toggleDataset(phone.name)}
-                            className={`p-2.5 px-3.5 rounded-xl text-xs transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-75 shadow-md hover:shadow-lg
+                            className={`w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 shadow-lg hover:shadow-xl border animate-scale-in
                               ${isVisible 
-                                ? 'text-white' // Specific brand color is applied via style
-                                : 'bg-gray-800 text-gray-300 hover:bg-gray-700 focus:ring-gray-600' // Unselected state
+                                ? 'text-white shadow-lg' // Specific brand color is applied via style
+                                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 border-gray-600 hover:border-gray-500' // Unselected state
                               }`}
                             style={{
                               backgroundColor: isVisible 
                                 ? (BRAND_COLORS[brand as keyof typeof BRAND_COLORS] || '#4A5568') // fallback color if brand color is missing
-                                : '#2D3748', // Equivalent to bg-gray-800 for unselected, ensures consistency
+                                : undefined,
                               borderColor: isVisible 
                                 ? (BRAND_COLORS[brand as keyof typeof BRAND_COLORS] || '#4A5568') 
-                                : '#4A5568', // border-gray-600
-                              borderWidth: '1px',
-                              // Consider adding a subtle box-shadow if needed to match pic more closely
+                                : undefined,
                             }}
                           >
-                            <div className="font-bold text-sm mb-0.5">{phone.name}</div>
-                            <div className="opacity-90 text-[11px]">{releaseDisplayDate}</div>
-                            <div className="opacity-90 text-[11px]">{focalRange}</div>
+                            <div className="font-semibold truncate">{phone.name}</div>
+                            <div className="text-xs opacity-90 mt-0.5 truncate">{releaseDisplayDate} | {focalRange}</div>
                           </button>
                         );
                       })}
