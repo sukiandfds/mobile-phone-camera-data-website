@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import {  Chart as ChartJS,  CategoryScale,  LinearScale,  PointElement,  LineElement,  Title,  Tooltip,  Legend, LogarithmicScale, ScriptableContext, TooltipItem } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -508,7 +508,11 @@ export default function PhoneCameraComparison() {
             return '';
           },
           label: function(context: TooltipItem<'line'>) {
-            const rawData = context.raw as { pointType?: string, details?: LensDetail | null | { note: string, [key: string]: any }, originalFocalLength?: number }; 
+            const rawData = context.raw as { 
+              pointType?: string, 
+              details?: LensDetail | null | ({ note: string } & LensInfo), // More specific type for details
+              originalFocalLength?: number 
+            }; 
             const pointType = rawData?.pointType;
 
             if (pointType !== 'actual') {
@@ -516,11 +520,12 @@ export default function PhoneCameraComparison() {
                 return '';
             }
 
-            const details = rawData?.details as { note: string, focalLength?: number, physicalApertureValue?: number, [key: string]: any }; 
+            const details = rawData?.details as ({ note: string } & LensInfo); // More specific type for details when actual
             if (!details) return '';
 
             const label = [];
             
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const allTooltipItems = (context.chart as any).tooltip.dataPoints || [context]; // context.chart.tooltip may not exist, keep as any for now or find specific type
             const actualItemsFromChart = allTooltipItems.filter((item: TooltipItem<'line'>) => (item.raw as { pointType?: string })?.pointType === 'actual');
             if (actualItemsFromChart.length > 1) {
@@ -552,7 +557,7 @@ export default function PhoneCameraComparison() {
 
             return label;
           },
-          afterLabel: function(_context: TooltipItem<'line'>) {
+          afterLabel: function() {
             return '';
           }
         }
@@ -674,7 +679,7 @@ export default function PhoneCameraComparison() {
   };
 
   // 计算特定焦距的等效光圈
-  const calculateApertureAtFocalLength = (targetFocal: number, lenses: LensInfo[]): number | null => {
+  const calculateApertureAtFocalLength = useCallback((targetFocal: number, lenses: LensInfo[]): number | null => {
     if (!lenses || lenses.length === 0) return null;
 
     // 边界规则：不向更广角模拟
@@ -718,7 +723,7 @@ export default function PhoneCameraComparison() {
         l.focalLength === bestLens.focalLength && l.aperture === bestLens.aperture
       );
 
-      if (originalLens?.physicalApertureValue && originalLens?.conversionFactor) {
+      if (originalLens?.physicalApertureValue && originalLens?.conversionFactor && bestLens.focalLength !== 0) { // Added null check for bestLens.focalLength
         // 使用物理参数计算：等效光圈 = 物理光圈 × 转换系数 × (目标焦距 / 原始焦距)
         const calculatedAperture = (originalLens.physicalApertureValue * originalLens.conversionFactor / bestLens.focalLength) * targetFocal;
         return Number(calculatedAperture.toFixed(1));
@@ -726,9 +731,10 @@ export default function PhoneCameraComparison() {
     }
 
     // 如果没有物理参数，使用简单的线性插值
+    if(bestLens.focalLength === 0) return null; // Avoid division by zero
     const ratio = targetFocal / bestLens.focalLength;
     return Number((bestLens.aperture * ratio).toFixed(1));
-  };
+  }, [chartData]); // Added chartData to dependencies
 
   // 获取所有焦段（标准焦段 + 原生焦段）
   const getAllFocalLengths = useMemo(() => {
@@ -750,25 +756,25 @@ export default function PhoneCameraComparison() {
   }, [chartData]);
 
   // 生成表格数据
-  const generateTableData = () => {
-    const tableData: { [phone: string]: { [focal: string]: number | null } } = {};
+  const generateTableData = useCallback(() => {
+    const tableDataGenerated: { [phone: string]: { [focal: string]: number | null } } = {};
     
     filteredDatasets.forEach(dataset => {
       const phoneName = dataset.label;
-      tableData[phoneName] = {};
+      tableDataGenerated[phoneName] = {};
       
       const lenses = dataset.originalLenses || [];
       
       getAllFocalLengths.forEach(focal => {
         const aperture = calculateApertureAtFocalLength(focal, lenses);
-        tableData[phoneName][`${focal}mm`] = aperture;
+        tableDataGenerated[phoneName][`${focal}mm`] = aperture;
       });
     });
     
-    return tableData;
-  };
+    return tableDataGenerated;
+  }, [filteredDatasets, getAllFocalLengths, calculateApertureAtFocalLength]); // Added dependencies
 
-  const tableData = useMemo(() => generateTableData(), [filteredDatasets, getAllFocalLengths]);
+  const tableData = useMemo(() => generateTableData(), [generateTableData]); // Updated dependencies
 
   if (loading) {
     return (
