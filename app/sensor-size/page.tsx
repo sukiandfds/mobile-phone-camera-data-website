@@ -40,9 +40,22 @@ interface LensInfo {
   conversionFactor?: number;
 }
 
+// Define a new interface for the details of a point on the sensor size chart
+interface SensorPointDetails {
+  note: string;
+  focalLengthData: number;
+  displaySensorSize: string;
+  rawSensorSize: number;
+  nativeSensorSpec?: string;      // For actual points
+  basisFocalLength?: number;      // For virtual points: the focal length of the lens used as basis
+  basisOriginalSensorSize?: string; // For virtual points: the original sensor spec of the basis lens
+  // Index signature to allow other properties, aligning with ChartDataset details options
+  [key: string]: string | number | boolean | LensDetail | SensorPointDetails | undefined | null;
+}
+
 interface ChartDataset {
   label: string;
-  data: Array<{ x: number; y: number; details: LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | null }; originalFocalLength: number; pointType?: string } | number | null>;
+  data: Array<{ x: number; y: number; details: SensorPointDetails | LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | null }; originalFocalLength: number; pointType?: string } | number | null>;
   borderColor: string;
   backgroundColor: string;
   tension: number;
@@ -84,7 +97,7 @@ const BRAND_COLORS = {
 };
 
 // 传感器尺寸刻度（从大到小）
-const SENSOR_SIZE_SCALE = [1.0, 1/1.3, 1/1.4, 1/1.5, 1/1.6, 1/1.8, 1/2.0, 1/2.5, 1/3.0, 1/4.0, 1/5.0];
+// const SENSOR_SIZE_SCALE = [1.0, 1/1.3, 1/1.4, 1/1.5, 1/1.6, 1/1.8, 1/2.0, 1/2.5, 1/3.0, 1/4.0, 1/5.0]; // REMOVED
 
 // Helper function to parse sensor size string (e.g., "1/2.51" -> 1/2.51)
 function parseSensorSize(sensorSizeStr: string): number {
@@ -119,67 +132,54 @@ function calculateEquivalentSensorSize(originalSensorSize: string, originalFocal
 // Helper function to format sensor size for display
 function formatSensorSize(size: number): string {
   const fraction = 1 / size;
-  // 去掉不必要的末尾0
   const fractionStr = fraction.toFixed(2).replace(/\.?0+$/, '');
+  if (fractionStr === '0.75') return '4/3'; // Special case for 1/0.75
+  if (Number.isInteger(parseFloat(fractionStr))) return `1/${parseFloat(fractionStr).toFixed(0)}`;
   return `1/${fractionStr}`;
 }
 
 // Define major focal lengths (will be populated from chartData.labels)
 let MAJOR_FOCAL_LENGTHS: number[] = [];
 
-// Helper function to transform focal length to new X-coordinate
-function transformFocalLengthToXCoordinate(
-  focalLength: number,
-  majorFocalLengths: number[]
-): number {
-  if (majorFocalLengths.length === 0) return focalLength;
-
-  // Find the index of the first major tick that is greater than or equal to the focal length
-  const insertIndex = majorFocalLengths.findIndex(tick => tick >= focalLength);
-
-  if (insertIndex === -1) {
-    // Focal length is greater than all major ticks, place it after the last tick proportionally
-    // This case should ideally be handled by the 200mm extension logic for the last lens.
-    // For intermediate lenses that might go beyond the last standard tick before 200mm,
-    // we might need a more robust way if MAJOR_FOCAL_LENGTHS doesn't include 200mm explicitly as the true end.
-    // Assuming 200mm is the conceptual end for now.
-    if (majorFocalLengths.length > 0) {
-        const lastTickVal = majorFocalLengths[majorFocalLengths.length - 1];
-        const secondLastTickVal = majorFocalLengths.length > 1 ? majorFocalLengths[majorFocalLengths.length - 2] : 0;
-        const lastSegmentLength = lastTickVal - secondLastTickVal;
-        if (lastSegmentLength > 0) {
-             return (majorFocalLengths.length - 1) + (focalLength - lastTickVal) / lastSegmentLength;
-        }
-        return majorFocalLengths.length -1; // Fallback
-    }
-     return majorFocalLengths.length > 0 ? majorFocalLengths.length -1 : 0; // Default to last tick if all else fails
-  }
-
-  if (insertIndex === 0) {
-    // Focal length is less than or equal to the first major tick.
-    if (focalLength === majorFocalLengths[0]) return 0; // Exactly on the first tick
-
-    // Proportionally place before the first tick, assuming a conceptual "0" or previous tick.
-    // This assumes the "space" before the first tick is similar to the first segment.
-    const firstSegmentLength = majorFocalLengths.length > 1 ? majorFocalLengths[1] - majorFocalLengths[0] : majorFocalLengths[0];
-    if (firstSegmentLength > 0) {
-        return (focalLength - majorFocalLengths[0]) / firstSegmentLength; // Will be negative or zero
-    }
-    return 0; // Fallback
-  }
-
-  // Focal length is between majorFocalLengths[insertIndex-1] and majorFocalLengths[insertIndex]
-  const prevTick = majorFocalLengths[insertIndex - 1];
-  const nextTick = majorFocalLengths[insertIndex];
-  const segmentLength = nextTick - prevTick;
-
-  if (segmentLength === 0) return insertIndex - 1; // Should not happen with distinct ticks
-
-  const proportion = (focalLength - prevTick) / segmentLength;
-  return (insertIndex - 1) + proportion;
+interface SensorAxisDefinition {
+    value: number; // The actual numeric value of the sensor size
+    label: string; // The display label (e.g., "1/1.25")
 }
 
-const X_AXIS_PADDING = 1.0;
+const CUSTOM_SENSOR_Y_AXIS_DEFINITIONS: SensorAxisDefinition[] = [];
+const denominatorsCorrected = [];
+for (let d = 0.75; d <= 5; d += 0.25) {
+    denominatorsCorrected.push(d);
+}
+
+denominatorsCorrected.forEach(d => {
+    let label;
+    if (d === 0.75) label = "4/3";
+    else if (Number.isInteger(d)) label = `1/${d}`;
+    else label = `1/${d.toFixed(2).replace(/\.?0+$/, '')}`;
+    CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.push({ value: 1/d, label: label });
+});
+
+// Sort by sensor value, descending (largest sensor size first, visually at top with reverse:true, so index 0 is top)
+CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.sort((a, b) => b.value - a.value);
+
+// New helper function to map a sensor VALUE to its CATEGORY INDEX on the Y-axis
+function mapSensorValueToYCategoryIndex(sensorValue: number | null | undefined): number | null {
+    if (sensorValue === null || sensorValue === undefined) return null;
+    if (CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.length === 0) return null;
+
+    let closestIndex = 0; // Default to the first one (largest sensor)
+    let minDiff = Math.abs(CUSTOM_SENSOR_Y_AXIS_DEFINITIONS[0].value - sensorValue);
+
+    for (let i = 1; i < CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.length; i++) {
+        const diff = Math.abs(CUSTOM_SENSOR_Y_AXIS_DEFINITIONS[i].value - sensorValue);
+        if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = i;
+        }
+    }
+    return closestIndex;
+}
 
 export default function PhoneSensorSizeComparison() {
   const [phoneData, setPhoneData] = useState<PhoneBrandData>({});
@@ -208,60 +208,115 @@ export default function PhoneSensorSizeComparison() {
             MAJOR_FOCAL_LENGTHS = loadedChartData.labels.map(label => parseInt(label.replace('mm', '')));
           }
           
-          // Transform datasets for linear X-axis with virtual points at standard focal lengths
+          const FOCAL_LENGTH_AT_END = 200; // Define the maximum focal length for extension
+
+          // Transform datasets to generate points like the comparison page
           const transformedDatasets = loadedChartData.datasets.map(dataset => {
-            const originalLenses = dataset.originalLenses || [];
-            const newPoints: Array<{ x: number; y: number; details: LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | null }; originalFocalLength: number; pointType: string }> = [];
+            const originalLensesSorted = (dataset.originalLenses || []).slice().sort((a,b) => a.focalLength - b.focalLength);
+            const newPoints: Array<{ x: number; y: number; details: SensorPointDetails; originalFocalLength: number; pointType: string }> = [];
             
             const MAJOR_FOCAL_LENGTHS_NUM = MAJOR_FOCAL_LENGTHS.length > 0 
                 ? MAJOR_FOCAL_LENGTHS 
                 : (loadedChartData?.labels?.map(l => parseFloat(l.replace('mm', ''))) || []);
 
-            if (originalLenses && originalLenses.length > 0 && MAJOR_FOCAL_LENGTHS_NUM.length > 0) {
-              // 只在标准焦段生成虚拟点
-              MAJOR_FOCAL_LENGTHS_NUM.forEach(focal => {
-                const result = calculateSensorSizeAtFocalLength(focal, originalLenses, dataset.lensDetails || {});
-                if (result.size !== null && result.size !== undefined) {
-                  // 将传感器大小转换为Y轴索引
-                  const sensorSizeIndex = SENSOR_SIZE_SCALE.findIndex(scale => Math.abs(scale - result.size!) < 0.001);
-                  let yIndex = sensorSizeIndex;
-                  
-                  if (sensorSizeIndex === -1) {
-                    // 如果不在标准刻度中，找到最接近的位置进行插值
-                    for (let i = 0; i < SENSOR_SIZE_SCALE.length - 1; i++) {
-                      if (result.size! <= SENSOR_SIZE_SCALE[i] && result.size! >= SENSOR_SIZE_SCALE[i + 1]) {
-                        const ratio = (SENSOR_SIZE_SCALE[i] - result.size!) / (SENSOR_SIZE_SCALE[i] - SENSOR_SIZE_SCALE[i + 1]);
-                        yIndex = i + ratio;
-                        break;
-                      }
-                    }
-                    // 如果还是找不到，用边界值
-                    if (yIndex === sensorSizeIndex) {
-                      if (result.size! >= SENSOR_SIZE_SCALE[0]) yIndex = 0;
-                      else if (result.size! <= SENSOR_SIZE_SCALE[SENSOR_SIZE_SCALE.length - 1]) yIndex = SENSOR_SIZE_SCALE.length - 1;
-                    }
-                  }
+            if (originalLensesSorted.length > 0) {
+              for (let i = 0; i < originalLensesSorted.length; i++) {
+                const currentActualLens = originalLensesSorted[i];
+                const nextOriginalLens = (i + 1 < originalLensesSorted.length) ? originalLensesSorted[i + 1] : null;
 
-                  const isNative = originalLenses.some(l => l.focalLength === focal);
+                const lensDetailsForCurrent = dataset.lensDetails?.[currentActualLens.focalLength.toString()];
+                const originalSensorSpec = lensDetailsForCurrent?.sensorSize;
+
+                if (!originalSensorSpec) {
+                  console.warn(`[SensorSizeChart] Sensor spec not found for ${dataset.label} at ${currentActualLens.focalLength}mm. Skipping this lens segment.`);
+                  continue; 
+                }
+
+                // 1. Add 'actual' point for currentActualLens
+                const calculatedSizeActual = calculateEquivalentSensorSize(originalSensorSpec, currentActualLens.focalLength, currentActualLens.focalLength);
+                const yCategoryIndexActual = mapSensorValueToYCategoryIndex(calculatedSizeActual);
+
+                if (yCategoryIndexActual !== null) {
                   newPoints.push({
-                    x: transformFocalLengthToXCoordinate(focal, MAJOR_FOCAL_LENGTHS_NUM),
-                    y: yIndex,
-                    details: { 
-                      note: isNative ? 'Native lens data' : 'Virtual point', 
-                      focalLength: focal,
-                      sensorSize: result.originalSensorSize || 'calculated'
+                    x: currentActualLens.focalLength,
+                    y: yCategoryIndexActual,
+                    details: {
+                        note: `原生镜头 (${currentActualLens.focalLength}mm)`,
+                        focalLengthData: currentActualLens.focalLength,
+                        displaySensorSize: formatSensorSize(calculatedSizeActual),
+                        rawSensorSize: calculatedSizeActual,
+                        nativeSensorSpec: originalSensorSpec
                     },
-                    originalFocalLength: focal,
-                    pointType: isNative ? 'actual' : 'virtual'
+                    originalFocalLength: currentActualLens.focalLength,
+                    pointType: 'actual'
                   });
                 }
-              });
+
+                const extendToFL = nextOriginalLens ? nextOriginalLens.focalLength : FOCAL_LENGTH_AT_END;
+
+                // 2. Add 'virtual_connector' points
+                MAJOR_FOCAL_LENGTHS_NUM.forEach(majorFL => {
+                  if (currentActualLens.focalLength < majorFL && majorFL < extendToFL) {
+                    const calculatedSizeConnector = calculateEquivalentSensorSize(originalSensorSpec, currentActualLens.focalLength, majorFL);
+                    const yCategoryIndexConnector = mapSensorValueToYCategoryIndex(calculatedSizeConnector);
+                    if (yCategoryIndexConnector !== null) {
+                      newPoints.push({
+                        x: majorFL,
+                        y: yCategoryIndexConnector,
+                        details: {
+                            note: `计算连接点 @ ${majorFL}mm (基于 ${currentActualLens.focalLength}mm 镜头)`,
+                            focalLengthData: majorFL,
+                            displaySensorSize: formatSensorSize(calculatedSizeConnector),
+                            rawSensorSize: calculatedSizeConnector,
+                            basisFocalLength: currentActualLens.focalLength,
+                            basisOriginalSensorSize: originalSensorSpec
+                        },
+                        originalFocalLength: majorFL,
+                        pointType: 'virtual_connector'
+                      });
+                    }
+                  }
+                });
+
+                // 3. Add 'virtual_segment_end' point
+                if (extendToFL > currentActualLens.focalLength) {
+                    const calculatedSizeEnd = calculateEquivalentSensorSize(originalSensorSpec, currentActualLens.focalLength, extendToFL);
+                    const yCategoryIndexEnd = mapSensorValueToYCategoryIndex(calculatedSizeEnd);
+
+                    if (yCategoryIndexEnd !== null) {
+                      newPoints.push({
+                        x: extendToFL,
+                        y: yCategoryIndexEnd,
+                        details: {
+                            note: `理论末端 @ ${extendToFL}mm (基于 ${currentActualLens.focalLength}mm 镜头)`,
+                            focalLengthData: extendToFL,
+                            displaySensorSize: formatSensorSize(calculatedSizeEnd),
+                            rawSensorSize: calculatedSizeEnd,
+                            basisFocalLength: currentActualLens.focalLength,
+                            basisOriginalSensorSize: originalSensorSpec
+                        },
+                        originalFocalLength: extendToFL,
+                        pointType: 'virtual_segment_end'
+                      });
+                    }
+                }
+              }
             }
+            
+            newPoints.sort((a, b) => {
+              if (a.x < b.x) return -1;
+              if (a.x > b.x) return 1;
+              // If x is the same, preserve the original push order.
+              // This is crucial for Chart.js to draw vertical lines correctly when
+              // a segment_end point from a previous lens and an actual point from the current lens
+              // share the same x-coordinate.
+              return 0; 
+            });
             
             const newDataset: ChartDataset = {
               ...dataset,
               data: newPoints,
-              tension: 0, // 取消平滑，使用直线
+              tension: 0, 
             };
             return newDataset;
           });
@@ -308,42 +363,6 @@ export default function PhoneSensorSizeComparison() {
     return datasets.filter(dataset => visibleDatasets.has(dataset.label));
   }, [chartData, visibleDatasets]);
 
-  // 动态计算Y轴范围
-  const yAxisRange = useMemo(() => {
-    if (filteredDatasets.length === 0) return { min: SENSOR_SIZE_SCALE[SENSOR_SIZE_SCALE.length - 1], max: SENSOR_SIZE_SCALE[0] };
-    
-    let minSensorSize = Infinity;
-    let maxSensorSize = -Infinity;
-    
-    filteredDatasets.forEach(dataset => {
-      dataset.data.forEach(point => {
-        if (point && typeof point === 'object' && point.y !== null && point.y !== undefined && 'y' in point) {
-          minSensorSize = Math.min(minSensorSize, (point as {y:number}).y);
-          maxSensorSize = Math.max(maxSensorSize, (point as {y:number}).y);
-        }
-      });
-    });
-    
-    if (minSensorSize === Infinity) return { min: SENSOR_SIZE_SCALE[SENSOR_SIZE_SCALE.length - 1], max: SENSOR_SIZE_SCALE[0] };
-    
-    // 找到合适的范围边界，并增加上下间距
-    let minIndex = SENSOR_SIZE_SCALE.findIndex(val => val <= minSensorSize);
-    let maxIndex = SENSOR_SIZE_SCALE.findIndex(val => val >= maxSensorSize);
-
-    // 如果找不到，使用边界值
-    if (minIndex === -1) minIndex = SENSOR_SIZE_SCALE.length - 1;
-    if (maxIndex === -1) maxIndex = 0;
-
-    // 增加上下间距：向下扩展一个刻度，向上扩展一个刻度
-    minIndex = Math.min(SENSOR_SIZE_SCALE.length - 1, minIndex + 1);
-    maxIndex = Math.max(0, maxIndex - 1);
-    
-    return {
-      min: SENSOR_SIZE_SCALE[minIndex],
-      max: SENSOR_SIZE_SCALE[maxIndex]
-    };
-  }, [filteredDatasets]);
-
   // 图表配置 - 仿照新设计
   const chartOptions = {
     responsive: true,
@@ -383,9 +402,9 @@ export default function PhoneSensorSizeComparison() {
     },
     scales: {
       x: {
-        type: 'linear' as const, // Change X-axis to linear
-        min: 0 - X_AXIS_PADDING, // Start before the first tick index
-        max: MAJOR_FOCAL_LENGTHS.length > 0 ? (MAJOR_FOCAL_LENGTHS.length - 1) + X_AXIS_PADDING : 10 + X_AXIS_PADDING, // End after the last tick index
+        type: 'logarithmic' as const, // Change X-axis to logarithmic
+        min: MAJOR_FOCAL_LENGTHS.length > 0 ? Math.min(...MAJOR_FOCAL_LENGTHS) * 0.9 : 10, 
+        max: MAJOR_FOCAL_LENGTHS.length > 0 ? Math.max(...MAJOR_FOCAL_LENGTHS) * 1.05 : 220,
         title: {
             display: true,
             text: '等效焦距 (mm)',
@@ -401,20 +420,23 @@ export default function PhoneSensorSizeComparison() {
           font: {
             size: 11
           },
-          stepSize: 1, // Ensure ticks at every integer index
-          autoSkip: false, // Attempt to show all labels
+          autoSkip: false, // Give more control to afterBuildTicks
           callback: function(value: unknown /*, index, ticks */) {
-            // 'value' here is the numeric tick value (0, 1, 2, ...)
-            const tickIndex = Number(value);
-            if (tickIndex >= 0 && tickIndex < MAJOR_FOCAL_LENGTHS.length && Number.isInteger(tickIndex)) {
-              return `${MAJOR_FOCAL_LENGTHS[tickIndex]}mm`;
+            const tickValue = Number(value);
+            // Only show labels for MAJOR_FOCAL_LENGTHS
+            if (MAJOR_FOCAL_LENGTHS.includes(tickValue)) {
+              return `${tickValue}mm`;
             }
-            return ''; // Don't show labels for non-integer/out-of-bounds ticks
+            return ''; // Hide labels for other auto-generated log-scale ticks
           }
         },
         afterBuildTicks: (axis: { ticks: Array<{ value: number }>, min: number, max: number }) => {
           if (MAJOR_FOCAL_LENGTHS.length > 0) {
-            axis.ticks = MAJOR_FOCAL_LENGTHS.map((_, index) => ({ value: index }));
+            // Filter MAJOR_FOCAL_LENGTHS to be within the axis min/max and create ticks
+            axis.ticks = MAJOR_FOCAL_LENGTHS
+              .filter(fl => fl >= axis.min && fl <= axis.max)
+              .map(fl => ({ value: fl }))
+              .sort((a,b) => a.value - b.value); // Ensure sorted for log axis
           } else {
             axis.ticks = [];
           }
@@ -433,39 +455,35 @@ export default function PhoneSensorSizeComparison() {
             font: { size: 12 }
         },
         min: 0,
-        max: SENSOR_SIZE_SCALE.length - 1,
+        max: CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.length > 0 ? CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.length - 1 : 0,
         ticks: {
           color: '#999999',
           font: {
             size: 11
           },
-          callback: function(value: unknown) {
+          autoSkip: false, 
+          stepSize: 1, // Ensure a tick for each category index
+          callback: function(value: unknown /*, index, ticks */) {
             const tickIndex = Number(value);
-            if (Number.isInteger(tickIndex) && tickIndex >= 0 && tickIndex < SENSOR_SIZE_SCALE.length) {
-              return formatSensorSize(SENSOR_SIZE_SCALE[tickIndex]);
+            if (Number.isInteger(tickIndex) && tickIndex >= 0 && tickIndex < CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.length) {
+              return CUSTOM_SENSOR_Y_AXIS_DEFINITIONS[tickIndex]?.label || '';
             }
             return '';
-          },
-          autoSkip: false, 
-          stepSize: 1,
-        },
-        afterBuildTicks: (axis: { min: number; max: number; ticks: { value: number }[] }) => {
-          // 根据实际显示范围过滤刻度
-          const minSensorSize = yAxisRange.min;
-          const maxSensorSize = yAxisRange.max;
-          
-          const visibleIndices: number[] = [];
-          SENSOR_SIZE_SCALE.forEach((sensorSize, index) => {
-            if (sensorSize >= minSensorSize && sensorSize <= maxSensorSize) {
-              visibleIndices.push(index);
-            }
-          });
-
-          if (visibleIndices.length > 0) {
-            axis.min = Math.min(...visibleIndices);
-            axis.max = Math.max(...visibleIndices);
-            axis.ticks = visibleIndices.map(index => ({ value: index }));
           }
+        },
+        afterBuildTicks: (axis: { ticks: Array<{ value: number }>, min: number, max: number }) => {
+          const newTicks: Array<{ value: number }> = [];
+          if (CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.length > 0) {
+            for(let i = 0; i < CUSTOM_SENSOR_Y_AXIS_DEFINITIONS.length; i++) {
+                // Only add ticks that are within the explicit min/max of the axis
+                // which should be 0 to length-1 already.
+                if (i >= axis.min && i <= axis.max) {
+                    newTicks.push({ value: i });
+                }
+            }
+          }
+          axis.ticks = newTicks; 
+          // Ticks are already sorted 0, 1, 2...
         },
         grid: {
           color: '#2a2a2a',
@@ -672,19 +690,19 @@ export default function PhoneSensorSizeComparison() {
   };
 
   // 计算特定焦距的等效传感器大小
-  const calculateSensorSizeAtFocalLength = useCallback((targetFocal: number, lenses: LensInfo[], lensDetails: { [key: string]: LensDetail }): { size: number | null, isNative: boolean, originalSensorSize?: string } => {
+  const calculateSensorSizeAtFocalLength = useCallback((targetFocal: number, lenses: LensInfo[], lensDetails: { [key: string]: LensDetail }): { size: number | null, isNative: boolean, originalSensorSize?: string, basisFocalLength?: number, basisOriginalSensorSize?: string } => {
     if (!lenses || lenses.length === 0) return { size: null, isNative: false };
 
     // 检查是否为原生焦段
     const nativeLens = lenses.find(l => l.focalLength === targetFocal);
     if (nativeLens) {
-      const lensDetail = lensDetails[targetFocal.toString()];
-      if (lensDetail?.sensorSize) {
-        const equivalentSize = calculateEquivalentSensorSize(lensDetail.sensorSize, targetFocal, targetFocal);
+      const nativeLensDetail = lensDetails[targetFocal.toString()];
+      if (nativeLensDetail?.sensorSize) {
+        const equivalentSize = calculateEquivalentSensorSize(nativeLensDetail.sensorSize, targetFocal, targetFocal);
         return { 
           size: equivalentSize, 
           isNative: true, 
-          originalSensorSize: lensDetail.sensorSize 
+          originalSensorSize: nativeLensDetail.sensorSize 
         };
       }
     }
@@ -694,7 +712,7 @@ export default function PhoneSensorSizeComparison() {
     if (targetFocal < minFocal) return { size: null, isNative: false };
 
     // 找到最合适的镜头进行计算
-    let bestLens = null;
+    let bestLens: LensInfo | null = null; // Ensure bestLens is explicitly LensInfo or null
     let minDistance = Infinity;
 
     for (const lens of lenses) {
@@ -708,17 +726,25 @@ export default function PhoneSensorSizeComparison() {
     }
 
     if (!bestLens) {
-      bestLens = lenses.reduce((closest, lens) => 
-        Math.abs(lens.focalLength - targetFocal) < Math.abs(closest.focalLength - targetFocal) 
-          ? lens : closest
-      );
+      // Fallback if no lens is <= targetFocal (e.g. targetFocal is larger than all native lenses)
+      // In this scenario, usually the largest focal length native lens is used as basis.
+      if (lenses.length > 0) {
+        bestLens = lenses.reduce((prev, current) => (prev.focalLength > current.focalLength) ? prev : current);
+      }
     }
+    
+    if (!bestLens) return { size: null, isNative: false }; // No suitable lens found
 
     // 获取传感器信息进行计算
-    const lensDetail = lensDetails[bestLens.focalLength.toString()];
-    if (lensDetail?.sensorSize) {
-      const equivalentSize = calculateEquivalentSensorSize(lensDetail.sensorSize, bestLens.focalLength, targetFocal);
-      return { size: equivalentSize, isNative: false };
+    const bestLensDetail = lensDetails[bestLens.focalLength.toString()];
+    if (bestLensDetail?.sensorSize) {
+      const equivalentSize = calculateEquivalentSensorSize(bestLensDetail.sensorSize, bestLens.focalLength, targetFocal);
+      return { 
+        size: equivalentSize, 
+        isNative: false, 
+        basisFocalLength: bestLens.focalLength, 
+        basisOriginalSensorSize: bestLensDetail.sensorSize 
+      };
     }
 
     return { size: null, isNative: false };
@@ -726,11 +752,11 @@ export default function PhoneSensorSizeComparison() {
 
   // 获取所有焦段（标准焦段 + 原生焦段）
   const getAllFocalLengths = useMemo(() => {
-    const standardFocals = MAJOR_FOCAL_LENGTHS; // [12, 16, 24, 28, 35, 50, 75, 85, 105, 120, 135, 200]
+    const standardFocals = MAJOR_FOCAL_LENGTHS; 
     const nativeFocals = new Set<number>();
 
-    // 收集所有机型的原生焦段
-    chartData.datasets.forEach(dataset => {
+    // 只从当前选中的机型中收集原生焦段
+    filteredDatasets.forEach(dataset => { // Iterate over filteredDatasets
       if (dataset.originalLenses) {
         dataset.originalLenses.forEach(lens => {
           nativeFocals.add(lens.focalLength);
@@ -741,7 +767,7 @@ export default function PhoneSensorSizeComparison() {
     // 合并并去重，然后排序
     const allFocals = [...new Set([...standardFocals, ...Array.from(nativeFocals)])];
     return allFocals.sort((a, b) => a - b);
-  }, [chartData]);
+  }, [filteredDatasets, MAJOR_FOCAL_LENGTHS]); // Changed dependencies to filteredDatasets and MAJOR_FOCAL_LENGTHS
 
   // 生成表格数据
   const generateTableData = useCallback(() => {

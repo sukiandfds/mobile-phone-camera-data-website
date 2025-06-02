@@ -28,7 +28,7 @@
           "sensorSize": "1/2.51",
           "physicalFocalLength": 2.03,
           "equivalentFocalLength": 12,
-          "aperture": "f1.8",
+          "aperture": "f/1.8",
           "equivalentAperture": "f/10.6"
         },
         "23": {
@@ -36,7 +36,7 @@
           "sensorSize": "1/0.98",
           "physicalFocalLength": 8.7,
           "equivalentFocalLength": 23,
-          "aperture": "f1.9",
+          "aperture": "f/1.9",
           "equivalentAperture": "f/5.0"
         },
         "60": {
@@ -44,7 +44,7 @@
           "sensorSize": "1/2.51",
           "physicalFocalLength": 9.87,
           "equivalentFocalLength": 60,
-          "aperture": "f1.8",
+          "aperture": "f/1.8",
           "equivalentAperture": "f/10.9"
         },
         "120": {
@@ -62,28 +62,28 @@
           "aperture": 10.6,
           "type": "ultraWide",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "conversionFactor": 6.033286999999999
         },
         {
           "focalLength": 23,
           "aperture": 5,
           "type": "main",
           "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
+          "conversionFactor": 2.6500792499999997
         },
         {
           "focalLength": 60,
           "aperture": 10.9,
           "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
+          "conversionFactor": 6.033286999999999
         },
         {
           "focalLength": 120,
           "aperture": 18.6,
           "type": "superTelephoto",
           "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "conversionFactor": 6.033286999999999
         }
       ]
     },
@@ -101,7 +101,7 @@
           "sensorSize": "1/2.51",
           "physicalFocalLength": 2.03,
           "equivalentFocalLength": 12,
-          "aperture": "f1.8",
+          "aperture": "f/1.8",
           "equivalentAperture": "f/10.6"
         },
         "23": {
@@ -109,7 +109,7 @@
           "sensorSize": "1/0.98",
           "physicalFocalLength": 8.7,
           "equivalentFocalLength": 23,
-          "aperture": "f1.63",
+          "aperture": "f/1.63",
           "equivalentAperture": "f/4.3"
         },
         "75": {
@@ -117,7 +117,7 @@
           "sensorSize": "1/2.51",
           "physicalFocalLength": 11.96,
           "equivalentFocalLength": 75,
-          "aperture": "f1.8",
+          "aperture": "f/1.8",
           "equivalentAperture": "f/11.3"
         },
         "120": {
@@ -135,28 +135,28 @@
           "aperture": 10.6,
           "type": "ultraWide",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "conversionFactor": 6.033286999999999
         },
         {
           "focalLength": 23,
           "aperture": 4.3,
           "type": "main",
           "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
+          "conversionFactor": 2.6500792499999997
         },
         {
           "focalLength": 75,
           "aperture": 11.3,
           "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
+          "conversionFactor": 6.033286999999999
         },
         {
           "focalLength": 120,
           "aperture": 15.5,
           "type": "superTelephoto",
           "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
+          "conversionFactor": 6.033286999999999
         }
       ]
     },
@@ -171,10 +171,10 @@
       "lensDetails": {
         "14": {
           "sensor": "Samsung S5KJN5",
-          "sensorSize": "1/2.76",
+          "sensorSize": "1/2.75",
           "physicalFocalLength": 2.13,
           "equivalentFocalLength": 14,
-          "aperture": "f2.2",
+          "aperture": "f/2.2",
           "equivalentAperture": "f/14.5"
         },
         "23": {
@@ -182,7 +182,7 @@
           "sensorSize": "1/0.98",
           "physicalFocalLength": 8.72,
           "equivalentFocalLength": 23,
-          "aperture": "f1.63",
+          "aperture": "f/1.63",
           "equivalentAperture": "f/4.3"
         },
         "70": {
@@ -190,7 +190,7 @@
           "sensorSize": "1/2.51",
           "physicalFocalLength": 11.5,
           "equivalentFocalLength": 70,
-          "aperture": "f1.8",
+          "aperture": "f/1.8",
           "equivalentAperture": "f/11.0"
         },
         "100": {
@@ -208,252 +208,222 @@
           "aperture": 14.5,
           "type": "ultraWide",
           "physicalApertureValue": 2.2,
-          "conversionFactor": 6.572769953051644
+          "conversionFactor": 6.610175
         },
         {
           "focalLength": 23,
           "aperture": 4.3,
           "type": "main",
           "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6376146788990824
+          "conversionFactor": 2.6500792499999997
         },
         {
           "focalLength": 70,
           "aperture": 11,
           "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.086956521739131
+          "conversionFactor": 6.033286999999999
         },
         {
           "focalLength": 100,
           "aperture": 10.4,
           "type": "superTelephoto",
           "physicalApertureValue": 2.6,
-          "conversionFactor": 3.98406374501992
+          "conversionFactor": 3.7858274999999995
         }
       ]
     },
     {
-      "label": "Vivo X90pro",
+      "label": "vivo X90 Pro",
       "data": [],
       "borderColor": "#8E24AA",
       "backgroundColor": "rgba(142, 36, 170, 0.1)",
       "tension": 0.4,
       "brand": "vivo",
-      "releaseYear": 2023,
+      "releaseYear": 2022,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "16": {
+          "sensor": "Sony IMX663",
+          "sensorSize": "1/2.93",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 16,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/14.1"
         },
         "23": {
           "sensor": "Sony IMX989",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
+          "aperture": "f/1.75",
+          "equivalentAperture": "f/4.6"
         },
-        "60": {
-          "sensor": "Sony IMX858",
+        "50": {
+          "sensor": "Sony IMX758",
           "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 50,
+          "aperture": "f/1.6",
+          "equivalentAperture": "f/9.7"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 16,
+          "aperture": 14.1,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2,
+          "conversionFactor": 7.042840999999999
         },
         {
           "focalLength": 23,
-          "aperture": 5,
+          "aperture": 4.6,
           "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.75,
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 60,
-          "aperture": 10.9,
+          "focalLength": 50,
+          "aperture": 9.7,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "physicalApertureValue": 1.6,
+          "conversionFactor": 6.033286999999999
         }
       ]
     },
     {
-      "label": "Vivo X90pro+",
+      "label": "vivo X90 Pro+",
       "data": [],
       "borderColor": "#AB47BC",
       "backgroundColor": "rgba(171, 71, 188, 0.1)",
       "tension": 0.4,
       "brand": "vivo",
-      "releaseYear": 2023,
+      "releaseYear": 2022,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "14": {
+          "sensor": "Sony IMX598",
+          "sensorSize": "1/2.0",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 14,
+          "aperture": "f/2.2",
+          "equivalentAperture": "f/11.9"
         },
         "23": {
           "sensor": "Sony IMX989",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
+          "aperture": "f/1.75",
+          "equivalentAperture": "f/4.6"
         },
-        "60": {
-          "sensor": "Sony IMX858",
+        "50": {
+          "sensor": "Sony IMX758",
           "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 50,
+          "aperture": "f/1.6",
+          "equivalentAperture": "f/9.7"
         },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
+        "125": {
+          "sensor": "OV64B",
+          "sensorSize": "1/2.0",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 125,
+          "aperture": "f/3.5",
+          "equivalentAperture": "f/18.9"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 14,
+          "aperture": 11.9,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2.2,
+          "conversionFactor": 5.408325
         },
         {
           "focalLength": 23,
-          "aperture": 5,
+          "aperture": 4.6,
           "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.75,
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 60,
-          "aperture": 10.9,
+          "focalLength": 50,
+          "aperture": 9.7,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
+          "physicalApertureValue": 1.6,
+          "conversionFactor": 6.033286999999999
         },
         {
-          "focalLength": 120,
-          "aperture": 18.6,
+          "focalLength": 125,
+          "aperture": 18.9,
           "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "physicalApertureValue": 3.5,
+          "conversionFactor": 5.408325
         }
       ]
     },
     {
-      "label": "Vivo X100pro",
+      "label": "vivo X100 Pro",
       "data": [],
       "borderColor": "#BA68C8",
       "backgroundColor": "rgba(186, 104, 200, 0.1)",
       "tension": 0.4,
       "brand": "vivo",
-      "releaseYear": 2024,
+      "releaseYear": 2023,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "15": {
+          "sensor": "Samsung S5KJN1",
+          "sensorSize": "1/2.76",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 15,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/13.3"
         },
         "23": {
-          "sensor": "Sony LYT-900",
+          "sensor": "Sony IMX989",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+          "aperture": "f/1.75",
+          "equivalentAperture": "f/4.6"
         },
-        "75": {
-          "sensor": "Sony IMX858",
+        "100": {
+          "sensor": "Sony IMX758",
           "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 100,
           "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
+          "equivalentAperture": "f/15.1"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 15,
+          "aperture": 13.3,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2,
+          "conversionFactor": 6.634211999999999
         },
         {
           "focalLength": 23,
-          "aperture": 4.3,
+          "aperture": 4.6,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.75,
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
+          "focalLength": 100,
+          "aperture": 15.1,
           "type": "superTelephoto",
           "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
+          "conversionFactor": 6.033286999999999
         }
       ]
     },
     {
-      "label": "Vivo X100ultra",
+      "label": "vivo X100 Ultra",
       "data": [],
       "borderColor": "#CE93D8",
       "backgroundColor": "rgba(206, 147, 216, 0.1)",
@@ -461,145 +431,115 @@
       "brand": "vivo",
       "releaseYear": 2024,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Vivo X200pro",
-      "data": [],
-      "borderColor": "#E1BEE7",
-      "backgroundColor": "rgba(225, 190, 231, 0.1)",
-      "tension": 0.4,
-      "brand": "vivo",
-      "releaseYear": 2025,
-      "lensDetails": {
         "14": {
-          "sensor": "Samsung S5KJN5",
-          "sensorSize": "1/2.76",
-          "physicalFocalLength": 2.03,
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
           "equivalentFocalLength": 14,
-          "aperture": "f2.2",
-          "equivalentAperture": "f/15.2"
+          "aperture": "f/2.2",
+          "equivalentAperture": "f/11.6"
         },
         "23": {
           "sensor": "Sony LYT-900",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+          "aperture": "f/1.75",
+          "equivalentAperture": "f/4.6"
         },
-        "70": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.16,
-          "equivalentFocalLength": 70,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "100": {
-          "sensor": "Samsung S5KHP9",
+        "85": {
+          "sensor": "Samsung HP9",
           "sensorSize": "1/1.4",
-          "physicalFocalLength": 25.1,
-          "equivalentFocalLength": 100,
-          "aperture": "f/2.6",
-          "equivalentAperture": "f/10.4"
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 85,
+          "aperture": "f/2.67",
+          "equivalentAperture": "f/10.1"
         }
       },
       "originalLenses": [
         {
           "focalLength": 14,
-          "aperture": 15.2,
+          "aperture": 11.6,
           "type": "ultraWide",
           "physicalApertureValue": 2.2,
-          "conversionFactor": 6.8965517241379315
+          "conversionFactor": 5.2731168749999995
         },
         {
           "focalLength": 23,
-          "aperture": 4.3,
+          "aperture": 4.6,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.75,
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 70,
-          "aperture": 11.3,
+          "focalLength": 85,
+          "aperture": 10.1,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.272401433691757
-        },
-        {
-          "focalLength": 100,
-          "aperture": 10.4,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.6,
-          "conversionFactor": 3.98406374501992
+          "physicalApertureValue": 2.67,
+          "conversionFactor": 3.7858274999999995
         }
       ]
     },
     {
-      "label": "Vivo X200ultra",
+      "label": "vivo X200 Pro",
+      "data": [],
+      "borderColor": "#E1BEE7",
+      "backgroundColor": "rgba(225, 190, 231, 0.1)",
+      "tension": 0.4,
+      "brand": "vivo",
+      "releaseYear": 2024,
+      "lensDetails": {
+        "14": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 14,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/10.5"
+        },
+        "23": {
+          "sensor": "Sony LYT-818",
+          "sensorSize": "1/1.28",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 23,
+          "aperture": "f/1.57",
+          "equivalentAperture": "f/5.4"
+        },
+        "70": {
+          "sensor": "Sony IMX882",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 70,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/10.5"
+        }
+      },
+      "originalLenses": [
+        {
+          "focalLength": 14,
+          "aperture": 10.5,
+          "type": "ultraWide",
+          "physicalApertureValue": 2,
+          "conversionFactor": 5.2731168749999995
+        },
+        {
+          "focalLength": 23,
+          "aperture": 5.4,
+          "type": "main",
+          "physicalApertureValue": 1.57,
+          "conversionFactor": 3.461328
+        },
+        {
+          "focalLength": 70,
+          "aperture": 10.5,
+          "type": "telephoto",
+          "physicalApertureValue": 2,
+          "conversionFactor": 5.2731168749999995
+        }
+      ]
+    },
+    {
+      "label": "vivo X200 Ultra",
       "data": [],
       "borderColor": "#8E24AA",
       "backgroundColor": "rgba(142, 36, 170, 0.1)",
@@ -608,71 +548,56 @@
       "releaseYear": 2025,
       "lensDetails": {
         "14": {
-          "sensor": "Samsung S5KJN5",
-          "sensorSize": "1/2.76",
-          "physicalFocalLength": 2.03,
+          "sensor": "Sony LYT-818",
+          "sensorSize": "1/1.28",
+          "physicalFocalLength": "",
           "equivalentFocalLength": 14,
-          "aperture": "f2.2",
-          "equivalentAperture": "f/15.2"
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/6.9"
         },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+        "35": {
+          "sensor": "Sony LYT-818",
+          "sensorSize": "1/1.28",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 35,
+          "aperture": "f/1.69",
+          "equivalentAperture": "f/5.8"
         },
-        "70": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.16,
-          "equivalentFocalLength": 70,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "100": {
-          "sensor": "Samsung S5KHP9",
+        "85": {
+          "sensor": "Samsung HP9",
           "sensorSize": "1/1.4",
-          "physicalFocalLength": 25.1,
-          "equivalentFocalLength": 100,
-          "aperture": "f/2.6",
-          "equivalentAperture": "f/10.4"
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 85,
+          "aperture": "f/2.27",
+          "equivalentAperture": "f/8.6"
         }
       },
       "originalLenses": [
         {
           "focalLength": 14,
-          "aperture": 15.2,
+          "aperture": 6.9,
           "type": "ultraWide",
-          "physicalApertureValue": 2.2,
-          "conversionFactor": 6.8965517241379315
+          "physicalApertureValue": 2,
+          "conversionFactor": 3.461328
         },
         {
-          "focalLength": 23,
-          "aperture": 4.3,
+          "focalLength": 35,
+          "aperture": 5.8,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.69,
+          "conversionFactor": 3.461328
         },
         {
-          "focalLength": 70,
-          "aperture": 11.3,
+          "focalLength": 85,
+          "aperture": 8.6,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.272401433691757
-        },
-        {
-          "focalLength": 100,
-          "aperture": 10.4,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.6,
-          "conversionFactor": 3.98406374501992
+          "physicalApertureValue": 2.27,
+          "conversionFactor": 3.7858274999999995
         }
       ]
     },
     {
-      "label": "Oppo findx6pro",
+      "label": "OPPO Find X6 Pro",
       "data": [],
       "borderColor": "#43A047",
       "backgroundColor": "rgba(67, 160, 71, 0.1)",
@@ -680,145 +605,130 @@
       "brand": "oppo",
       "releaseYear": 2023,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "14": {
+          "sensor": "Sony IMX890",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 14,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/8.4"
         },
         "23": {
           "sensor": "Sony IMX989",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
         },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
+        "65": {
+          "sensor": "Sony IMX890",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 65,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/11.0"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 14,
+          "aperture": 8.4,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2,
+          "conversionFactor": 4.2184935
         },
         {
           "focalLength": 23,
-          "aperture": 5,
+          "aperture": 4.8,
           "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "focalLength": 65,
+          "aperture": 11,
+          "type": "telephoto",
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 4.2184935
         }
       ]
     },
     {
-      "label": "Oppo findx7pro",
+      "label": "OPPO Find X7 Ultra",
       "data": [],
       "borderColor": "#66BB6A",
       "backgroundColor": "rgba(102, 187, 106, 0.1)",
       "tension": 0.4,
       "brand": "oppo",
-      "releaseYear": 2023,
+      "releaseYear": 2024,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "14": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 14,
+          "aperture": "f/1.95",
+          "equivalentAperture": "f/10.3"
         },
         "23": {
-          "sensor": "Sony IMX989",
+          "sensor": "Sony LYT-900",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
         },
-        "60": {
+        "65": {
+          "sensor": "Sony IMX890",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 65,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/11.0"
+        },
+        "135": {
           "sensor": "Sony IMX858",
           "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 135,
+          "aperture": "f/4.3",
+          "equivalentAperture": "f/25.9"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 14,
+          "aperture": 10.3,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 1.95,
+          "conversionFactor": 5.2731168749999995
         },
         {
           "focalLength": 23,
-          "aperture": 5,
+          "aperture": 4.8,
           "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 120,
-          "aperture": 18.6,
+          "focalLength": 65,
+          "aperture": 11,
+          "type": "telephoto",
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 4.2184935
+        },
+        {
+          "focalLength": 135,
+          "aperture": 25.9,
           "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "physicalApertureValue": 4.3,
+          "conversionFactor": 6.033286999999999
         }
       ]
     },
     {
-      "label": "Oppo findx7ultra",
+      "label": "OPPO Find X8 Pro",
       "data": [],
       "borderColor": "#81C784",
       "backgroundColor": "rgba(129, 199, 132, 0.1)",
@@ -826,218 +736,130 @@
       "brand": "oppo",
       "releaseYear": 2024,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "15": {
+          "sensor": "Samsung S5KJN5",
+          "sensorSize": "1/2.75",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 15,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/13.2"
         },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+        "24": {
+          "sensor": "Sony LYT-700",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 24,
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/7.6"
         },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
+        "73": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 73,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/13.7"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 15,
+          "aperture": 13.2,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2,
+          "conversionFactor": 6.610175
         },
         {
-          "focalLength": 23,
-          "aperture": 4.3,
+          "focalLength": 24,
+          "aperture": 7.6,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
+          "conversionFactor": 4.2184935
         },
         {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
+          "focalLength": 73,
+          "aperture": 13.7,
+          "type": "telephoto",
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 5.2731168749999995
         }
       ]
     },
     {
-      "label": "Oppo findx8pro",
+      "label": "OPPO Find X8 Ultra",
       "data": [],
       "borderColor": "#A5D6A7",
       "backgroundColor": "rgba(165, 214, 167, 0.1)",
       "tension": 0.4,
       "brand": "oppo",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Oppo findx8ultra",
-      "data": [],
-      "borderColor": "#C8E6C9",
-      "backgroundColor": "rgba(200, 230, 201, 0.1)",
-      "tension": 0.4,
-      "brand": "oppo",
       "releaseYear": 2025,
       "lensDetails": {
-        "14": {
+        "15": {
           "sensor": "Samsung S5KJN5",
-          "sensorSize": "1/2.76",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 14,
-          "aperture": "f2.2",
-          "equivalentAperture": "f/15.2"
+          "sensorSize": "1/2.75",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 15,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/13.2"
         },
         "23": {
           "sensor": "Sony LYT-900",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
         },
         "70": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.16,
+          "sensor": "Sony LYT-700",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
           "equivalentFocalLength": 70,
-          "aperture": "f1.8",
+          "aperture": "f/2.67",
           "equivalentAperture": "f/11.3"
         },
-        "100": {
-          "sensor": "Samsung S5KHP9",
-          "sensorSize": "1/1.4",
-          "physicalFocalLength": 25.1,
-          "equivalentFocalLength": 100,
-          "aperture": "f/2.6",
-          "equivalentAperture": "f/10.4"
+        "135": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 135,
+          "aperture": "f/3.2",
+          "equivalentAperture": "f/16.9"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 14,
-          "aperture": 15.2,
+          "focalLength": 15,
+          "aperture": 13.2,
           "type": "ultraWide",
-          "physicalApertureValue": 2.2,
-          "conversionFactor": 6.8965517241379315
+          "physicalApertureValue": 2,
+          "conversionFactor": 6.610175
         },
         {
           "focalLength": 23,
-          "aperture": 4.3,
+          "aperture": 4.8,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.8,
+          "conversionFactor": 2.6500792499999997
         },
         {
           "focalLength": 70,
           "aperture": 11.3,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.272401433691757
+          "physicalApertureValue": 2.67,
+          "conversionFactor": 4.2184935
         },
         {
-          "focalLength": 100,
-          "aperture": 10.4,
+          "focalLength": 135,
+          "aperture": 16.9,
           "type": "superTelephoto",
-          "physicalApertureValue": 2.6,
-          "conversionFactor": 3.98406374501992
+          "physicalApertureValue": 3.2,
+          "conversionFactor": 5.2731168749999995
         }
       ]
     },
     {
-      "label": "iPhone14pro",
+      "label": "iPhone14pro max",
       "data": [],
       "borderColor": "#1E88E5",
       "backgroundColor": "rgba(30, 136, 229, 0.1)",
@@ -1045,145 +867,130 @@
       "brand": "apple",
       "releaseYear": 2023,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "14": {
+          "sensor": "Sony IMX890",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 14,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/8.4"
         },
         "23": {
           "sensor": "Sony IMX989",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
         },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
+        "65": {
+          "sensor": "Sony IMX890",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 65,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/11.0"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 14,
+          "aperture": 8.4,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2,
+          "conversionFactor": 4.2184935
         },
         {
           "focalLength": 23,
-          "aperture": 5,
+          "aperture": 4.8,
           "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.8,
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 60,
-          "aperture": 10.9,
+          "focalLength": 65,
+          "aperture": 11,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "iPhone14promax",
-      "data": [],
-      "borderColor": "#42A5F5",
-      "backgroundColor": "rgba(66, 165, 245, 0.1)",
-      "tension": 0.4,
-      "brand": "apple",
-      "releaseYear": 2023,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
-        },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 5,
-          "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 4.2184935
         }
       ]
     },
     {
       "label": "iPhone15pro",
+      "data": [],
+      "borderColor": "#42A5F5",
+      "backgroundColor": "rgba(66, 165, 245, 0.1)",
+      "tension": 0.4,
+      "brand": "apple",
+      "releaseYear": 2024,
+      "lensDetails": {
+        "14": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 14,
+          "aperture": "f/1.95",
+          "equivalentAperture": "f/10.3"
+        },
+        "23": {
+          "sensor": "Sony LYT-900",
+          "sensorSize": "1/0.98",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 23,
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
+        },
+        "65": {
+          "sensor": "Sony IMX890",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 65,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/11.0"
+        },
+        "135": {
+          "sensor": "Sony IMX858",
+          "sensorSize": "1/2.51",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 135,
+          "aperture": "f/4.3",
+          "equivalentAperture": "f/25.9"
+        }
+      },
+      "originalLenses": [
+        {
+          "focalLength": 14,
+          "aperture": 10.3,
+          "type": "ultraWide",
+          "physicalApertureValue": 1.95,
+          "conversionFactor": 5.2731168749999995
+        },
+        {
+          "focalLength": 23,
+          "aperture": 4.8,
+          "type": "main",
+          "physicalApertureValue": 1.8,
+          "conversionFactor": 2.6500792499999997
+        },
+        {
+          "focalLength": 65,
+          "aperture": 11,
+          "type": "telephoto",
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 4.2184935
+        },
+        {
+          "focalLength": 135,
+          "aperture": 25.9,
+          "type": "superTelephoto",
+          "physicalApertureValue": 4.3,
+          "conversionFactor": 6.033286999999999
+        }
+      ]
+    },
+    {
+      "label": "iPhone15pro max",
       "data": [],
       "borderColor": "#64B5F6",
       "backgroundColor": "rgba(100, 181, 246, 0.1)",
@@ -1191,218 +998,130 @@
       "brand": "apple",
       "releaseYear": 2024,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "15": {
+          "sensor": "Samsung S5KJN5",
+          "sensorSize": "1/2.75",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 15,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/13.2"
         },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+        "24": {
+          "sensor": "Sony LYT-700",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 24,
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/7.6"
         },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
+        "73": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 73,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/13.7"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 15,
+          "aperture": 13.2,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2,
+          "conversionFactor": 6.610175
         },
         {
-          "focalLength": 23,
-          "aperture": 4.3,
+          "focalLength": 24,
+          "aperture": 7.6,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
+          "conversionFactor": 4.2184935
         },
         {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
+          "focalLength": 73,
+          "aperture": 13.7,
+          "type": "telephoto",
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 5.2731168749999995
         }
       ]
     },
     {
-      "label": "iPhone15promax",
+      "label": "iPhone16pro(max)",
       "data": [],
       "borderColor": "#90CAF9",
       "backgroundColor": "rgba(144, 202, 249, 0.1)",
       "tension": 0.4,
       "brand": "apple",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "iPhone16pro（max）",
-      "data": [],
-      "borderColor": "#BBDEFB",
-      "backgroundColor": "rgba(187, 222, 251, 0.1)",
-      "tension": 0.4,
-      "brand": "apple",
       "releaseYear": 2025,
       "lensDetails": {
-        "14": {
+        "15": {
           "sensor": "Samsung S5KJN5",
-          "sensorSize": "1/2.76",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 14,
-          "aperture": "f2.2",
-          "equivalentAperture": "f/15.2"
+          "sensorSize": "1/2.75",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 15,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/13.2"
         },
         "23": {
           "sensor": "Sony LYT-900",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
         },
         "70": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.16,
+          "sensor": "Sony LYT-700",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
           "equivalentFocalLength": 70,
-          "aperture": "f1.8",
+          "aperture": "f/2.67",
           "equivalentAperture": "f/11.3"
         },
-        "100": {
-          "sensor": "Samsung S5KHP9",
-          "sensorSize": "1/1.4",
-          "physicalFocalLength": 25.1,
-          "equivalentFocalLength": 100,
-          "aperture": "f/2.6",
-          "equivalentAperture": "f/10.4"
+        "135": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 135,
+          "aperture": "f/3.2",
+          "equivalentAperture": "f/16.9"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 14,
-          "aperture": 15.2,
+          "focalLength": 15,
+          "aperture": 13.2,
           "type": "ultraWide",
-          "physicalApertureValue": 2.2,
-          "conversionFactor": 6.8965517241379315
+          "physicalApertureValue": 2,
+          "conversionFactor": 6.610175
         },
         {
           "focalLength": 23,
-          "aperture": 4.3,
+          "aperture": 4.8,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.8,
+          "conversionFactor": 2.6500792499999997
         },
         {
           "focalLength": 70,
           "aperture": 11.3,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.272401433691757
+          "physicalApertureValue": 2.67,
+          "conversionFactor": 4.2184935
         },
         {
-          "focalLength": 100,
-          "aperture": 10.4,
+          "focalLength": 135,
+          "aperture": 16.9,
           "type": "superTelephoto",
-          "physicalApertureValue": 2.6,
-          "conversionFactor": 3.98406374501992
+          "physicalApertureValue": 3.2,
+          "conversionFactor": 5.2731168749999995
         }
       ]
     },
     {
-      "label": "S25",
+      "label": "S23 Ultra",
       "data": [],
       "borderColor": "#E53935",
       "backgroundColor": "rgba(229, 57, 53, 0.1)",
@@ -1410,145 +1129,130 @@
       "brand": "samsung",
       "releaseYear": 2023,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "14": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 14,
+          "aperture": "f/1.95",
+          "equivalentAperture": "f/10.3"
         },
         "23": {
-          "sensor": "Sony IMX989",
+          "sensor": "Sony LYT-900",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
         },
-        "60": {
+        "65": {
+          "sensor": "Sony IMX890",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 65,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/11.0"
+        },
+        "135": {
           "sensor": "Sony IMX858",
           "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 135,
+          "aperture": "f/4.3",
+          "equivalentAperture": "f/25.9"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 14,
+          "aperture": 10.3,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 1.95,
+          "conversionFactor": 5.2731168749999995
         },
         {
           "focalLength": 23,
-          "aperture": 5,
+          "aperture": 4.8,
           "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
+          "conversionFactor": 2.6500792499999997
         },
         {
-          "focalLength": 120,
-          "aperture": 18.6,
+          "focalLength": 65,
+          "aperture": 11,
+          "type": "telephoto",
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 4.2184935
+        },
+        {
+          "focalLength": 135,
+          "aperture": 25.9,
           "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "physicalApertureValue": 4.3,
+          "conversionFactor": 6.033286999999999
         }
       ]
     },
     {
-      "label": "S24",
+      "label": "S24 Ultra",
       "data": [],
       "borderColor": "#EF5350",
       "backgroundColor": "rgba(239, 83, 80, 0.1)",
       "tension": 0.4,
       "brand": "samsung",
-      "releaseYear": 2023,
+      "releaseYear": 2024,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
+        "15": {
+          "sensor": "Samsung S5KJN5",
+          "sensorSize": "1/2.75",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 15,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/13.2"
         },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
+        "24": {
+          "sensor": "Sony LYT-700",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 24,
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/7.6"
         },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
+        "73": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 73,
+          "aperture": "f/2.6",
+          "equivalentAperture": "f/13.7"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 12,
-          "aperture": 10.6,
+          "focalLength": 15,
+          "aperture": 13.2,
           "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
+          "physicalApertureValue": 2,
+          "conversionFactor": 6.610175
         },
         {
-          "focalLength": 23,
-          "aperture": 5,
+          "focalLength": 24,
+          "aperture": 7.6,
           "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
           "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
+          "conversionFactor": 4.2184935
         },
         {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
+          "focalLength": 73,
+          "aperture": 13.7,
+          "type": "telephoto",
+          "physicalApertureValue": 2.6,
+          "conversionFactor": 5.2731168749999995
         }
       ]
     },
     {
-      "label": "S23",
+      "label": "S25 Ultra",
       "data": [],
       "borderColor": "#F44336",
       "backgroundColor": "rgba(244, 67, 54, 0.1)",
@@ -1556,1089 +1260,67 @@
       "brand": "samsung",
       "releaseYear": 2024,
       "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Mate 60pro",
-      "data": [],
-      "borderColor": "#F57C00",
-      "backgroundColor": "rgba(245, 124, 0, 0.1)",
-      "tension": 0.4,
-      "brand": "huawei",
-      "releaseYear": 2023,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
-        },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 5,
-          "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Mate 50pro",
-      "data": [],
-      "borderColor": "#FF9800",
-      "backgroundColor": "rgba(255, 152, 0, 0.1)",
-      "tension": 0.4,
-      "brand": "huawei",
-      "releaseYear": 2023,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
-        },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 5,
-          "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "P60pro",
-      "data": [],
-      "borderColor": "#FFB74D",
-      "backgroundColor": "rgba(255, 183, 77, 0.1)",
-      "tension": 0.4,
-      "brand": "huawei",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "P50pro",
-      "data": [],
-      "borderColor": "#FFCC80",
-      "backgroundColor": "rgba(255, 204, 128, 0.1)",
-      "tension": 0.4,
-      "brand": "huawei",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Magic7RSR",
-      "data": [],
-      "borderColor": "#7B1FA2",
-      "backgroundColor": "rgba(123, 31, 162, 0.1)",
-      "tension": 0.4,
-      "brand": "honor",
-      "releaseYear": 2023,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
-        },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 5,
-          "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Magic7pro",
-      "data": [],
-      "borderColor": "#9C27B0",
-      "backgroundColor": "rgba(156, 39, 176, 0.1)",
-      "tension": 0.4,
-      "brand": "honor",
-      "releaseYear": 2023,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
-        },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 5,
-          "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Magic6RSR",
-      "data": [],
-      "borderColor": "#BA68C8",
-      "backgroundColor": "rgba(186, 104, 200, 0.1)",
-      "tension": 0.4,
-      "brand": "honor",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Magic6pro",
-      "data": [],
-      "borderColor": "#CE93D8",
-      "backgroundColor": "rgba(206, 147, 216, 0.1)",
-      "tension": 0.4,
-      "brand": "honor",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Z50ultra",
-      "data": [],
-      "borderColor": "#D32F2F",
-      "backgroundColor": "rgba(211, 47, 47, 0.1)",
-      "tension": 0.4,
-      "brand": "nubia",
-      "releaseYear": 2023,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
-        },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 5,
-          "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Z50sultra",
-      "data": [],
-      "borderColor": "#F44336",
-      "backgroundColor": "rgba(244, 67, 54, 0.1)",
-      "tension": 0.4,
-      "brand": "nubia",
-      "releaseYear": 2023,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony IMX989",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.9",
-          "equivalentAperture": "f/5.0"
-        },
-        "60": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 9.87,
-          "equivalentFocalLength": 60,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.9"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/3.0",
-          "equivalentAperture": "f/18.6"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 5,
-          "type": "main",
-          "physicalApertureValue": 1.9,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 60,
-          "aperture": 10.9,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.079027355623101
-        },
-        {
-          "focalLength": 120,
-          "aperture": 18.6,
-          "type": "superTelephoto",
-          "physicalApertureValue": 3,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Z60ultra",
-      "data": [],
-      "borderColor": "#EF5350",
-      "backgroundColor": "rgba(239, 83, 80, 0.1)",
-      "tension": 0.4,
-      "brand": "nubia",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Z60sultra",
-      "data": [],
-      "borderColor": "#E57373",
-      "backgroundColor": "rgba(229, 115, 115, 0.1)",
-      "tension": 0.4,
-      "brand": "nubia",
-      "releaseYear": 2024,
-      "lensDetails": {
-        "12": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 12,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/10.6"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "75": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.96,
-          "equivalentFocalLength": 75,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "120": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 19.4,
-          "equivalentFocalLength": 120,
-          "aperture": "f/2.5",
-          "equivalentAperture": "f/15.5"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 12,
-          "aperture": 10.6,
-          "type": "ultraWide",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 5.9113300492610845
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 75,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.270903010033444
-        },
-        {
-          "focalLength": 120,
-          "aperture": 15.5,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.5,
-          "conversionFactor": 6.185567010309279
-        }
-      ]
-    },
-    {
-      "label": "Z70ultra",
-      "data": [],
-      "borderColor": "#FFCDD2",
-      "backgroundColor": "rgba(255, 205, 210, 0.1)",
-      "tension": 0.4,
-      "brand": "nubia",
-      "releaseYear": 2025,
-      "lensDetails": {
-        "14": {
+        "15": {
           "sensor": "Samsung S5KJN5",
-          "sensorSize": "1/2.76",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 14,
-          "aperture": "f2.2",
-          "equivalentAperture": "f/15.2"
+          "sensorSize": "1/2.75",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 15,
+          "aperture": "f/2.0",
+          "equivalentAperture": "f/13.2"
         },
         "23": {
           "sensor": "Sony LYT-900",
           "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
+          "physicalFocalLength": "",
           "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
+          "aperture": "f/1.8",
+          "equivalentAperture": "f/4.8"
         },
         "70": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.16,
+          "sensor": "Sony LYT-700",
+          "sensorSize": "1/1.56",
+          "physicalFocalLength": "",
           "equivalentFocalLength": 70,
-          "aperture": "f1.8",
+          "aperture": "f/2.67",
           "equivalentAperture": "f/11.3"
         },
-        "100": {
-          "sensor": "Samsung S5KHP9",
-          "sensorSize": "1/1.4",
-          "physicalFocalLength": 25.1,
-          "equivalentFocalLength": 100,
-          "aperture": "f/2.6",
-          "equivalentAperture": "f/10.4"
+        "135": {
+          "sensor": "Sony LYT-600",
+          "sensorSize": "1/1.95",
+          "physicalFocalLength": "",
+          "equivalentFocalLength": 135,
+          "aperture": "f/3.2",
+          "equivalentAperture": "f/16.9"
         }
       },
       "originalLenses": [
         {
-          "focalLength": 14,
-          "aperture": 15.2,
+          "focalLength": 15,
+          "aperture": 13.2,
           "type": "ultraWide",
-          "physicalApertureValue": 2.2,
-          "conversionFactor": 6.8965517241379315
+          "physicalApertureValue": 2,
+          "conversionFactor": 6.610175
         },
         {
           "focalLength": 23,
-          "aperture": 4.3,
+          "aperture": 4.8,
           "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
+          "physicalApertureValue": 1.8,
+          "conversionFactor": 2.6500792499999997
         },
         {
           "focalLength": 70,
           "aperture": 11.3,
           "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.272401433691757
+          "physicalApertureValue": 2.67,
+          "conversionFactor": 4.2184935
         },
         {
-          "focalLength": 100,
-          "aperture": 10.4,
+          "focalLength": 135,
+          "aperture": 16.9,
           "type": "superTelephoto",
-          "physicalApertureValue": 2.6,
-          "conversionFactor": 3.98406374501992
-        }
-      ]
-    },
-    {
-      "label": "Z70sultra",
-      "data": [],
-      "borderColor": "#D32F2F",
-      "backgroundColor": "rgba(211, 47, 47, 0.1)",
-      "tension": 0.4,
-      "brand": "nubia",
-      "releaseYear": 2025,
-      "lensDetails": {
-        "14": {
-          "sensor": "Samsung S5KJN5",
-          "sensorSize": "1/2.76",
-          "physicalFocalLength": 2.03,
-          "equivalentFocalLength": 14,
-          "aperture": "f2.2",
-          "equivalentAperture": "f/15.2"
-        },
-        "23": {
-          "sensor": "Sony LYT-900",
-          "sensorSize": "1/0.98",
-          "physicalFocalLength": 8.7,
-          "equivalentFocalLength": 23,
-          "aperture": "f1.63",
-          "equivalentAperture": "f/4.3"
-        },
-        "70": {
-          "sensor": "Sony IMX858",
-          "sensorSize": "1/2.51",
-          "physicalFocalLength": 11.16,
-          "equivalentFocalLength": 70,
-          "aperture": "f1.8",
-          "equivalentAperture": "f/11.3"
-        },
-        "100": {
-          "sensor": "Samsung S5KHP9",
-          "sensorSize": "1/1.4",
-          "physicalFocalLength": 25.1,
-          "equivalentFocalLength": 100,
-          "aperture": "f/2.6",
-          "equivalentAperture": "f/10.4"
-        }
-      },
-      "originalLenses": [
-        {
-          "focalLength": 14,
-          "aperture": 15.2,
-          "type": "ultraWide",
-          "physicalApertureValue": 2.2,
-          "conversionFactor": 6.8965517241379315
-        },
-        {
-          "focalLength": 23,
-          "aperture": 4.3,
-          "type": "main",
-          "physicalApertureValue": 1.63,
-          "conversionFactor": 2.6436781609195403
-        },
-        {
-          "focalLength": 70,
-          "aperture": 11.3,
-          "type": "telephoto",
-          "physicalApertureValue": 1.8,
-          "conversionFactor": 6.272401433691757
-        },
-        {
-          "focalLength": 100,
-          "aperture": 10.4,
-          "type": "superTelephoto",
-          "physicalApertureValue": 2.6,
-          "conversionFactor": 3.98406374501992
+          "physicalApertureValue": 3.2,
+          "conversionFactor": 5.2731168749999995
         }
       ]
     }

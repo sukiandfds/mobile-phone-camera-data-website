@@ -40,9 +40,16 @@ interface LensInfo {
   conversionFactor?: number;
 }
 
+interface ExtendedPointDetails extends LensInfo {
+  note: string;
+  sourceLensFocalLength?: number;
+  sourceLensAperture?: number;
+  calculatedEquivalentAperture?: number;
+}
+
 interface ChartDataset {
   label: string;
-  data: Array<{ x: number; y: number; details: LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | null }; originalFocalLength: number; pointType?: string } | number | null>;
+  data: Array<{ x: number; y: number; details: ExtendedPointDetails | LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | ExtendedPointDetails | null }; originalFocalLength: number; pointType?: string } | number | null>;
   borderColor: string;
   backgroundColor: string;
   tension: number;
@@ -83,64 +90,8 @@ const BRAND_COLORS = {
   nubia: '#D32F2F'
 };
 
-const APERTURE_SCALE = [4.0, 5.6, 8.0, 11, 16, 22, 32, 45, 64];
-
 // Define major focal lengths (will be populated from chartData.labels)
 let MAJOR_FOCAL_LENGTHS: number[] = [];
-
-// Helper function to transform focal length to new X-coordinate
-function transformFocalLengthToXCoordinate(
-  focalLength: number,
-  majorFocalLengths: number[]
-): number {
-  if (majorFocalLengths.length === 0) return focalLength;
-
-  // Find the index of the first major tick that is greater than or equal to the focal length
-  const insertIndex = majorFocalLengths.findIndex(tick => tick >= focalLength);
-
-  if (insertIndex === -1) {
-    // Focal length is greater than all major ticks, place it after the last tick proportionally
-    // This case should ideally be handled by the 200mm extension logic for the last lens.
-    // For intermediate lenses that might go beyond the last standard tick before 200mm,
-    // we might need a more robust way if MAJOR_FOCAL_LENGTHS doesn't include 200mm explicitly as the true end.
-    // Assuming 200mm is the conceptual end for now.
-    if (majorFocalLengths.length > 0) {
-        const lastTickVal = majorFocalLengths[majorFocalLengths.length - 1];
-        const secondLastTickVal = majorFocalLengths.length > 1 ? majorFocalLengths[majorFocalLengths.length - 2] : 0;
-        const lastSegmentLength = lastTickVal - secondLastTickVal;
-        if (lastSegmentLength > 0) {
-             return (majorFocalLengths.length - 1) + (focalLength - lastTickVal) / lastSegmentLength;
-        }
-        return majorFocalLengths.length -1; // Fallback
-    }
-     return majorFocalLengths.length > 0 ? majorFocalLengths.length -1 : 0; // Default to last tick if all else fails
-  }
-
-  if (insertIndex === 0) {
-    // Focal length is less than or equal to the first major tick.
-    if (focalLength === majorFocalLengths[0]) return 0; // Exactly on the first tick
-
-    // Proportionally place before the first tick, assuming a conceptual "0" or previous tick.
-    // This assumes the "space" before the first tick is similar to the first segment.
-    const firstSegmentLength = majorFocalLengths.length > 1 ? majorFocalLengths[1] - majorFocalLengths[0] : majorFocalLengths[0];
-    if (firstSegmentLength > 0) {
-        return (focalLength - majorFocalLengths[0]) / firstSegmentLength; // Will be negative or zero
-    }
-    return 0; // Fallback
-  }
-
-  // Focal length is between majorFocalLengths[insertIndex-1] and majorFocalLengths[insertIndex]
-  const prevTick = majorFocalLengths[insertIndex - 1];
-  const nextTick = majorFocalLengths[insertIndex];
-  const segmentLength = nextTick - prevTick;
-
-  if (segmentLength === 0) return insertIndex - 1; // Should not happen with distinct ticks
-
-  const proportion = (focalLength - prevTick) / segmentLength;
-  return (insertIndex - 1) + proportion;
-}
-
-const X_AXIS_PADDING = 1.0;
 
 export default function PhoneCameraComparison() {
   const [phoneData, setPhoneData] = useState<PhoneBrandData>({});
@@ -171,85 +122,96 @@ export default function PhoneCameraComparison() {
           
           // Transform datasets for linear X-axis and native lens points
           const transformedDatasets = loadedChartData.datasets.map(dataset => {
-            const originalLenses = dataset.originalLenses || [];
-            const newPoints: Array<{ x: number; y: number; details: LensDetail | null | { note: string, [key: string]: string | number | boolean | LensDetail | null }; originalFocalLength: number; pointType: string }> = [];
+            // Ensure originalLenses is an array and sort it by focal length
+            const originalLenses = (dataset.originalLenses || []).slice().sort((a, b) => a.focalLength - b.focalLength);
             
+            const newPoints: Array<{ x: number; y: number; details: ExtendedPointDetails | null; originalFocalLength: number; pointType: string }> = [];
+            const FOCAL_LENGTH_AT_END = 200; // Define the maximum focal length for extension
+
             const MAJOR_FOCAL_LENGTHS_NUM = MAJOR_FOCAL_LENGTHS.length > 0 
                 ? MAJOR_FOCAL_LENGTHS 
                 : (loadedChartData?.labels?.map(l => parseFloat(l.replace('mm', ''))) || []);
 
-            if (originalLenses && originalLenses.length > 0 && MAJOR_FOCAL_LENGTHS_NUM.length > 0) {
+            if (originalLenses.length > 0 && MAJOR_FOCAL_LENGTHS_NUM.length > 0) {
               for (let i = 0; i < originalLenses.length; i++) {
                 const currentLens = originalLenses[i];
+                const nextOriginalLens = (i + 1 < originalLenses.length) ? originalLenses[i + 1] : null;
 
                 if (!currentLens || typeof currentLens.focalLength !== 'number' || typeof currentLens.aperture !== 'number') {
-                  console.warn(`Skipping invalid lens data for ${dataset.label}`, currentLens);
+                  console.warn(`Skipping invalid current lens data for ${dataset.label}`, currentLens);
                   continue;
                 }
-                
-                // 1. Add current lens's actual data point
+
+                // 1. Add actual point for currentLens
                 newPoints.push({
-                  x: transformFocalLengthToXCoordinate(currentLens.focalLength, MAJOR_FOCAL_LENGTHS_NUM),
+                  x: currentLens.focalLength,
                   y: currentLens.aperture,
                   details: { note: 'Actual lens data', ...currentLens },
                   originalFocalLength: currentLens.focalLength,
                   pointType: 'actual'
                 });
 
-                if (i < originalLenses.length - 1) { // If not the last lens
-                  const nextLens = originalLenses[i + 1];
-                  if (!nextLens || typeof nextLens.focalLength !== 'number' || typeof nextLens.aperture !== 'number') {
-                    console.warn(`Skipping invalid next lens data for ${dataset.label}`, nextLens);
-                    continue;
-                  }
+                const extendToFL = nextOriginalLens ? nextOriginalLens.focalLength : FOCAL_LENGTH_AT_END;
 
-                  // 2. Add theoretical end point T_i
-                  let y_theoretical_end_i = currentLens.aperture; // Default
-                  if (typeof currentLens.physicalApertureValue === 'number' &&
-                      typeof currentLens.conversionFactor === 'number' &&
-                      currentLens.focalLength !== 0) {
-                    y_theoretical_end_i = (currentLens.physicalApertureValue * currentLens.conversionFactor / currentLens.focalLength) * nextLens.focalLength;
+                // 2. Add generated connector points between currentLens.focalLength and extendToFL
+                MAJOR_FOCAL_LENGTHS_NUM.forEach(majorFL => {
+                  if (currentLens.focalLength < majorFL && majorFL < extendToFL) {
+                    // Use simplified calculation based on native equivalent aperture and focal length ratio
+                    const y_calculated = currentLens.focalLength !== 0 
+                                       ? currentLens.aperture * (majorFL / currentLens.focalLength)
+                                       : currentLens.aperture; // Avoid division by zero, though focalLength should not be 0
+                    newPoints.push({
+                      x: majorFL,
+                      y: y_calculated,
+                      details: { 
+                        note: `Generated connector at ${majorFL}mm (based on ${currentLens.focalLength}mm lens optics)`, 
+                        sourceLensFocalLength: currentLens.focalLength,
+                        sourceLensAperture: currentLens.aperture,
+                        calculatedEquivalentAperture: y_calculated,
+                        ...currentLens // Include original lens details for context if needed
+                      },
+                      originalFocalLength: majorFL,
+                      pointType: 'generated_connector'
+                    });
                   }
-                  newPoints.push({
-                    x: transformFocalLengthToXCoordinate(nextLens.focalLength, MAJOR_FOCAL_LENGTHS_NUM),
-                    y: y_theoretical_end_i,
-                    details: { ...(currentLens as LensInfo), note: `Theoretical projection to ${nextLens.focalLength}mm based on ${currentLens.focalLength}mm lens (${dataset.label})` },
-                    originalFocalLength: nextLens.focalLength,
-                    pointType: 'theoretical_end'
-                  });
+                });
 
-                  // 3. Add next lens's actual Y-value point for vertical line
+                // 3. Add theoretical point at extendToFL (end of current lens's segment)
+                if (extendToFL > currentLens.focalLength) {
+                  // Use simplified calculation based on native equivalent aperture and focal length ratio
+                  const y_theoretical_at_extendToFL = currentLens.focalLength !== 0
+                                                    ? currentLens.aperture * (extendToFL / currentLens.focalLength)
+                                                    : currentLens.aperture; // Avoid division by zero
                   newPoints.push({
-                    x: transformFocalLengthToXCoordinate(nextLens.focalLength, MAJOR_FOCAL_LENGTHS_NUM),
-                    y: nextLens.aperture,
-                    details: { note: 'Next lens actual data', ...nextLens },
-                    originalFocalLength: nextLens.focalLength,
-                    pointType: 'actual_for_vertical_line'
-                  });
-
-                } else { // If it IS the last lens
-                  const FOCAL_LENGTH_AT_END = 200;
-                  let y_at_200mm = currentLens.aperture; // Default
-                  if (typeof currentLens.physicalApertureValue === 'number' &&
-                      typeof currentLens.conversionFactor === 'number' &&
-                      currentLens.focalLength !== 0) {
-                    y_at_200mm = (currentLens.physicalApertureValue * currentLens.conversionFactor / currentLens.focalLength) * FOCAL_LENGTH_AT_END;
-                  }
-                  newPoints.push({
-                    x: transformFocalLengthToXCoordinate(FOCAL_LENGTH_AT_END, MAJOR_FOCAL_LENGTHS_NUM),
-                    y: y_at_200mm,
-                    details: { ...(currentLens as LensInfo), note: `Theoretical projection to ${FOCAL_LENGTH_AT_END}mm (${dataset.label})` },
-                    originalFocalLength: FOCAL_LENGTH_AT_END,
-                    pointType: 'theoretical_extension_to_200mm'
+                    x: extendToFL,
+                    y: y_theoretical_at_extendToFL,
+                    details: { 
+                      note: `Theoretical segment end at ${extendToFL}mm (based on ${currentLens.focalLength}mm lens optics)`,
+                      sourceLensFocalLength: currentLens.focalLength,
+                      sourceLensAperture: currentLens.aperture,
+                      calculatedEquivalentAperture: y_theoretical_at_extendToFL,
+                      ...currentLens // Include original lens details for context if needed
+                    },
+                    originalFocalLength: extendToFL,
+                    pointType: 'theoretical_segment_end' 
                   });
                 }
               }
             }
-            newPoints.forEach(point => {
-              if (!point.details) {
-                console.warn(`Invalid point details for ${dataset.label}`, point);
-              }
+            
+            // Sort all collected points for the dataset by X-coordinate.
+            // This is crucial for Chart.js to draw lines correctly, including vertical jumps
+            // where two points might share the same X but different Y.
+            newPoints.sort((a, b) => {
+              if (a.x < b.x) return -1;
+              if (a.x > b.x) return 1;
+              // If x is the same, maintain a somewhat meaningful order, e.g., actual points could come after theoretical if needed,
+              // but for now, simple x sort is the primary goal. Chart.js connects in array order.
+              // For vertical lines, the 'theoretical_segment_end' of lens A and 'actual' of lens B (at same X)
+              // should result in a line between them.
+              return 0; // Or implement secondary sort key if strict ordering for same X is needed
             });
+            
             const newDataset: ChartDataset = {
               ...dataset,
               data: newPoints,
@@ -296,13 +258,13 @@ export default function PhoneCameraComparison() {
     if (!chartData || !chartData.datasets) {
       return [];
     }
-    const datasets = chartData.datasets as unknown as Array<ChartDataset & { data: Array<{x: number, y: number, details: LensDetail | null }> }>; // More specific type
+    const datasets = chartData.datasets as unknown as Array<ChartDataset & { data: Array<{x: number, y: number, details: ExtendedPointDetails | LensDetail | null }> }>; 
     return datasets.filter(dataset => visibleDatasets.has(dataset.label));
   }, [chartData, visibleDatasets]);
 
   // 动态计算Y轴范围
   const yAxisRange = useMemo(() => {
-    if (filteredDatasets.length === 0) return { min: APERTURE_SCALE[0], max: APERTURE_SCALE[APERTURE_SCALE.length - 1] };
+    if (filteredDatasets.length === 0) return { min: 4, max: 32 }; // Default multiples of 4 range
     
     let minAperture = Infinity;
     let maxAperture = -Infinity;
@@ -316,23 +278,33 @@ export default function PhoneCameraComparison() {
       });
     });
     
-    if (minAperture === Infinity) return { min: APERTURE_SCALE[0], max: APERTURE_SCALE[APERTURE_SCALE.length - 1] };
+    if (minAperture === Infinity || maxAperture === -Infinity) return { min: 4, max: 32 }; // Fallback if no valid data points
     
-    let minIndex = APERTURE_SCALE.findIndex(val => val >= minAperture);
-    let maxIndex = APERTURE_SCALE.findIndex(val => val >= maxAperture);
+    let newMinY = Math.floor(minAperture / 4) * 4;
+    if (minAperture > 0 && newMinY === 0) { // Ensure if data is positive, min tick is at least 4
+      newMinY = 4;
+    }
+    if (minAperture > 0 && minAperture < newMinY && newMinY > 4) { // If minAperture is e.g. 3.5, newMinY might be 4. If minAperture is 7, newMinY is 4. This ensures it covers.
+        newMinY = Math.max(4, newMinY -4); // Should ensure that the smallest tick is <= minAperture or is 4.
+    } else if (minAperture > 0 && newMinY === 0) {
+        newMinY = 4;
+    }
+    if (newMinY < 4) newMinY = 4; // Absolute minimum is F4
 
-    // Ensure we have a bit of padding, but stay within the APERTURE_SCALE bounds
-    minIndex = Math.max(0, minIndex - 1);
-    maxIndex = Math.min(APERTURE_SCALE.length - 1, maxIndex + 1);
-    
-    // Handle cases where all data is outside the default scale or very close to an edge
-    if (minIndex > maxIndex) { // Should not happen if data is valid
-        return { min: APERTURE_SCALE[0], max: APERTURE_SCALE[APERTURE_SCALE.length - 1] };
+    // Ensure the smallest tick is less than or equal to minAperture, unless minAperture is below 4.
+    if (minAperture >= 4) {
+        let candidateMin = Math.floor(minAperture / 4) * 4;
+        if (candidateMin > minAperture && candidateMin > 4) candidateMin -=4;
+        newMinY = Math.max(4, candidateMin)
+    } else {
+        newMinY = 4;
     }
 
+    const newMaxY = Math.ceil(maxAperture / 4) * 4;
+    
     return {
-      min: APERTURE_SCALE[minIndex],
-      max: APERTURE_SCALE[maxIndex]
+      min: newMinY,
+      max: Math.max(newMinY + 4, newMaxY) // Ensure max is at least one step greater than min if they are too close
     };
   }, [filteredDatasets]);
 
@@ -375,9 +347,9 @@ export default function PhoneCameraComparison() {
     },
     scales: {
       x: {
-        type: 'linear' as const, // Change X-axis to linear
-        min: 0 - X_AXIS_PADDING, // Start before the first tick index
-        max: MAJOR_FOCAL_LENGTHS.length > 0 ? (MAJOR_FOCAL_LENGTHS.length - 1) + X_AXIS_PADDING : 10 + X_AXIS_PADDING, // End after the last tick index
+        type: 'logarithmic' as const, // Change X-axis to logarithmic
+        min: MAJOR_FOCAL_LENGTHS.length > 0 ? Math.min(...MAJOR_FOCAL_LENGTHS) * 0.9 : 10, // Adjust min dynamically
+        max: MAJOR_FOCAL_LENGTHS.length > 0 ? Math.max(...MAJOR_FOCAL_LENGTHS) * 1.05 : 220, // Adjust max dynamically
         title: {
             display: true,
             text: '等效焦距 (mm)',
@@ -393,20 +365,23 @@ export default function PhoneCameraComparison() {
           font: {
             size: 11
           },
-          stepSize: 1, // Ensure ticks at every integer index
-          autoSkip: false, // Attempt to show all labels
+          autoSkip: false, // Give more control to afterBuildTicks
           callback: function(value: unknown /*, index, ticks */) {
-            // 'value' here is the numeric tick value (0, 1, 2, ...)
-            const tickIndex = Number(value);
-            if (tickIndex >= 0 && tickIndex < MAJOR_FOCAL_LENGTHS.length && Number.isInteger(tickIndex)) {
-              return `${MAJOR_FOCAL_LENGTHS[tickIndex]}mm`;
+            const tickValue = Number(value);
+            // Only show labels for MAJOR_FOCAL_LENGTHS
+            if (MAJOR_FOCAL_LENGTHS.includes(tickValue)) {
+              return `${tickValue}mm`;
             }
-            return ''; // Don't show labels for non-integer/out-of-bounds ticks
+            return ''; // Hide labels for other auto-generated log-scale ticks
           }
         },
         afterBuildTicks: (axis: { ticks: Array<{ value: number }>, min: number, max: number }) => {
           if (MAJOR_FOCAL_LENGTHS.length > 0) {
-            axis.ticks = MAJOR_FOCAL_LENGTHS.map((_, index) => ({ value: index }));
+            // Filter MAJOR_FOCAL_LENGTHS to be within the axis min/max and create ticks
+            axis.ticks = MAJOR_FOCAL_LENGTHS
+              .filter(fl => fl >= axis.min && fl <= axis.max)
+              .map(fl => ({ value: fl }))
+              .sort((a,b) => a.value - b.value); // Ensure sorted for log axis
           } else {
             axis.ticks = [];
           }
@@ -417,7 +392,7 @@ export default function PhoneCameraComparison() {
       },
       y: {
         reverse: true, 
-        type: 'logarithmic' as const, // Change to logarithmic scale and ensure type is const
+        type: 'linear' as const, // Change to linear scale
         title: {
             display: true,
             text: '等效光圈 (F)',
@@ -432,44 +407,30 @@ export default function PhoneCameraComparison() {
             size: 11
           },
           callback: function(value: unknown /*, index: number, ticks: Chart.Tick[] */) {
-            // 'this' refers to the scale object, value is the tick value
-            // We want to show the F-numbers from APERTURE_SCALE directly
             const tickValue = Number(value);
-            if (APERTURE_SCALE.includes(tickValue)) {
-              // Correctly format F-number, show one decimal for .6, zero for others like F4, F8, F16
-              const sStr = tickValue.toString();
-              const hasDecimal = sStr.includes('.');
-              // Check if it's a value like F5.6 (common in aperture scales)
-              const isStandardDecimalAperture = hasDecimal && sStr.split('.')[1].length === 1;
-
-              if (isStandardDecimalAperture) {
-                return `F${tickValue.toFixed(1)}`;
-              }
-              return `F${tickValue.toFixed(0)}`;
-            }
-            // Fallback for any other Chart.js generated ticks (should be minimized by afterBuildTicks)
-            return `F${tickValue.toFixed(1)}`; 
+            // All ticks will be multiples of 4 from afterBuildTicks
+            return `F${tickValue.toFixed(0)}`;
           },
           autoSkip: false, 
-          stepSize: undefined, 
+          stepSize: undefined, // Let afterBuildTicks handle step logic
         },
         afterBuildTicks: (axis: { min: number; max: number; ticks: { value: number }[] }) => {
-          // Filter ticks to only include those from APERTURE_SCALE that are within the min/max range
-          const newTicks = APERTURE_SCALE.filter(
-            tickValue => tickValue >= axis.min && tickValue <= axis.max
-          );
+          const newTicks: { value: number }[] = [];
+          const yMin = axis.min; // This is the calculated min (e.g., 4, 8)
+          const yMax = axis.max; // This is the calculated max (e.g., 28, 32)
 
-          // If no APERTURE_SCALE ticks are in range (e.g. data is all F70), 
-          // Chart.js might have auto-generated some. We prefer to show nothing or just min/max.
-          // For simplicity, if newTicks is empty, let Chart.js do its default or add min/max if sensible.
-          // However, with reverse scale, this needs care. For now, let's ensure APERTURE_SCALE priority.
-          if (newTicks.length > 0) {
-             axis.ticks = newTicks.map(tickValue => ({ value: tickValue }));
-          } else {
-            // Potentially add just min and max from yAxisRange if no standard F-stops are included
-            // This case should be rare if yAxisRange is derived from APERTURE_SCALE
-            axis.ticks = []; // Or handle as per desired behavior for empty intersection
+          for (let v = yMin; v <= yMax; v += 4) {
+            if (v >= 4) { // Ensure ticks start from F4 or greater
+              newTicks.push({ value: v });
+            }
           }
+          
+          if (newTicks.length === 0 && yMin >=4 && yMax >= yMin) { // Handle edge case where range is too small e.g. min=4, max=7
+             newTicks.push({value: yMin});
+             if (yMax >= yMin + 4) newTicks.push({value: Math.ceil(yMax/4)*4 }) // add max if it's a step away
+          }
+          
+          axis.ticks = newTicks;
           
           // Ensure ticks are sorted correctly because y-axis is reversed.
           // The actual scale rendering will handle the reverse order.
@@ -498,12 +459,19 @@ export default function PhoneCameraComparison() {
               if (actualItems.length === 1) {
                 return actualItems[0].dataset.label || '';
               } 
+              // If multiple actual points are hovered (e.g., two lines intersect exactly there)
+              return actualItems.map(item => item.dataset.label || '').join(', ');
             }
-            
-            // 如果没有实际点位，检查理论点
-            const theoreticalItems = tooltipItems.filter(item => (item.raw as { details?: { note?: string } })?.details?.note);
-            if (theoreticalItems.length > 0 && (theoreticalItems[0].raw as { details?: { note?: string } })?.details) { 
-              return ((theoreticalItems[0].raw as { details: { note: string } }).details).note;
+            // For non-actual points, try to find context from the raw data if available
+            if (tooltipItems.length > 0) {
+              const rawData = tooltipItems[0].raw as { 
+                pointType?: string, 
+                details?: ExtendedPointDetails | LensDetail | null | ({ note: string } & (LensInfo | ExtendedPointDetails)), 
+                originalFocalLength?: number 
+              }; 
+              if (rawData && rawData.details && typeof rawData.details === 'object' && 'note' in rawData.details) {
+                return rawData.details.note;
+              }
             }
             
             return '';
@@ -511,7 +479,7 @@ export default function PhoneCameraComparison() {
           label: function(context: TooltipItem<'line'>) {
             const rawData = context.raw as { 
               pointType?: string, 
-              details?: LensDetail | null | ({ note: string } & LensInfo), // More specific type for details
+              details?: ExtendedPointDetails | LensDetail | null | ({ note: string } & (LensInfo | ExtendedPointDetails)), 
               originalFocalLength?: number 
             }; 
             const pointType = rawData?.pointType;
@@ -521,7 +489,7 @@ export default function PhoneCameraComparison() {
                 return '';
             }
 
-            const details = rawData?.details as ({ note: string } & LensInfo); // More specific type for details when actual
+            const details = rawData?.details as ({ note: string } & (LensInfo | ExtendedPointDetails)); // More specific type for details when actual
             if (!details) return '';
 
             const label = [];
@@ -680,70 +648,59 @@ export default function PhoneCameraComparison() {
   };
 
   // 计算特定焦距的等效光圈
-  const calculateApertureAtFocalLength = useCallback((targetFocal: number, lenses: LensInfo[]): number | null => {
-    if (!lenses || lenses.length === 0) return null;
+  const calculateApertureAtFocalLength = useCallback((targetFocal: number, phoneLenses: LensInfo[]): number | null => {
+    if (!phoneLenses || phoneLenses.length === 0) return null;
 
     // 边界规则：不向更广角模拟
-    const minFocal = Math.min(...lenses.map(l => l.focalLength));
-    if (targetFocal < minFocal) return null;
+    const minFocalInLenses = Math.min(...phoneLenses.map(l => l.focalLength));
+    if (targetFocal < minFocalInLenses) return null;
 
     // 如果有精确匹配的原生焦段，直接返回
-    const exactMatch = lenses.find(l => l.focalLength === targetFocal);
-    if (exactMatch) return exactMatch.aperture;
+    const exactMatch = phoneLenses.find(l => l.focalLength === targetFocal);
+    if (exactMatch && typeof exactMatch.aperture === 'number') return exactMatch.aperture;
 
-    // 找到最合适的镜头进行计算
-    let bestLens = null;
-    let minDistance = Infinity;
+    // 找到最合适的镜头进行计算: 小于或等于目标焦距的最近的那个原生镜头
+    let bestLens: LensInfo | null = null;
+    const suitableLenses = phoneLenses.filter(l => l.focalLength <= targetFocal && typeof l.aperture === 'number');
 
-    for (const lens of lenses) {
-      // 只使用等于或小于目标焦距的镜头
-      if (lens.focalLength <= targetFocal) {
-        const distance = targetFocal - lens.focalLength;
-        if (distance < minDistance) {
-          minDistance = distance;
-          bestLens = lens;
+    if (suitableLenses.length > 0) {
+      bestLens = suitableLenses.reduce((prev, current) => (prev.focalLength > current.focalLength) ? prev : current);
+    } else {
+      // 如果没有小于等于目标焦距的镜头 (例如 targetFocal 大于所有镜头焦距)
+      // 则使用焦距最大的那个原生镜头作为计算基准
+      if (phoneLenses.length > 0) {
+        const maxFocalLens = phoneLenses.reduce((prev: LensInfo, current: LensInfo) => 
+            (prev.focalLength > current.focalLength) ? prev : current
+        );
+        if (maxFocalLens && typeof maxFocalLens.aperture === 'number') {
+            bestLens = maxFocalLens;
         }
       }
     }
 
-    // 如果没有找到合适的镜头，使用最接近的镜头
-    if (!bestLens) {
-      bestLens = lenses.reduce((closest, lens) => 
-        Math.abs(lens.focalLength - targetFocal) < Math.abs(closest.focalLength - targetFocal) 
-          ? lens : closest
-      );
+    if (!bestLens || typeof bestLens.aperture !== 'number') {
+        console.warn(`[calculateApertureAtFocalLength] No suitable bestLens found for ${targetFocal}mm or its aperture is invalid. Lenses available:`, phoneLenses);
+        return null; 
+    }
+    
+    // 使用简化的计算逻辑：A_target = A_native * (F_target / F_native)
+    if (bestLens.focalLength === 0) {
+        // If bestLens focal length is 0, and targetFocal is also 0, return aperture. Otherwise, it's an invalid scenario for ratio calculation.
+        return targetFocal === 0 ? bestLens.aperture : null;
     }
 
-    // 获取物理参数进行计算
-    const dataset = chartData.datasets.find(d => d.originalLenses?.some(l => 
-      l.focalLength === bestLens.focalLength && l.aperture === bestLens.aperture
-    ));
+    const calculatedAperture = bestLens.aperture * (targetFocal / bestLens.focalLength);
+    return Number(calculatedAperture.toFixed(1));
 
-    if (dataset) {
-      const originalLens = dataset.originalLenses.find(l => 
-        l.focalLength === bestLens.focalLength && l.aperture === bestLens.aperture
-      );
-
-      if (originalLens?.physicalApertureValue && originalLens?.conversionFactor && bestLens.focalLength !== 0) { // Added null check for bestLens.focalLength
-        // 使用物理参数计算：等效光圈 = 物理光圈 × 转换系数 × (目标焦距 / 原始焦距)
-        const calculatedAperture = (originalLens.physicalApertureValue * originalLens.conversionFactor / bestLens.focalLength) * targetFocal;
-        return Number(calculatedAperture.toFixed(1));
-      }
-    }
-
-    // 如果没有物理参数，使用简单的线性插值
-    if(bestLens.focalLength === 0) return null; // Avoid division by zero
-    const ratio = targetFocal / bestLens.focalLength;
-    return Number((bestLens.aperture * ratio).toFixed(1));
-  }, [chartData]); // Added chartData to dependencies
+  }, []);
 
   // 获取所有焦段（标准焦段 + 原生焦段）
   const getAllFocalLengths = useMemo(() => {
-    const standardFocals = MAJOR_FOCAL_LENGTHS; // [12, 16, 24, 28, 35, 50, 75, 85, 105, 120, 135, 200]
+    const standardFocals = MAJOR_FOCAL_LENGTHS; 
     const nativeFocals = new Set<number>();
 
-    // 收集所有机型的原生焦段
-    chartData.datasets.forEach(dataset => {
+    // 只从当前选中的机型中收集原生焦段
+    filteredDatasets.forEach(dataset => { // Iterate over filteredDatasets
       if (dataset.originalLenses) {
         dataset.originalLenses.forEach(lens => {
           nativeFocals.add(lens.focalLength);
@@ -754,7 +711,7 @@ export default function PhoneCameraComparison() {
     // 合并并去重，然后排序
     const allFocals = [...new Set([...standardFocals, ...Array.from(nativeFocals)])];
     return allFocals.sort((a, b) => a - b);
-  }, [chartData]);
+  }, [filteredDatasets, MAJOR_FOCAL_LENGTHS]); // Added filteredDatasets and MAJOR_FOCAL_LENGTHS to dependencies
 
   // 生成表格数据
   const generateTableData = useCallback(() => {

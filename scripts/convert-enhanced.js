@@ -252,9 +252,27 @@ function convertPhoneData() {
 function extractYear(dateStr) {
   if (!dateStr) return null;
   
-  // 匹配各种日期格式中的年份
-  const yearMatch = dateStr.match(/(\d{4})/);
-  return yearMatch ? parseInt(yearMatch[1]) : null;
+  // 如果是Date对象，直接获取年份
+  if (dateStr instanceof Date) {
+    return dateStr.getFullYear();
+  }
+  
+  // 如果是数字（Excel日期序列号），转换为Date对象
+  if (typeof dateStr === 'number') {
+    // Excel日期从1900年1月1日开始计算，需要转换
+    const excelEpoch = new Date(1900, 0, 1);
+    const date = new Date(excelEpoch.getTime() + (dateStr - 1) * 24 * 60 * 60 * 1000);
+    return date.getFullYear();
+  }
+  
+  // 如果是字符串，尝试匹配年份
+  if (typeof dateStr === 'string') {
+    const yearMatch = dateStr.match(/(\d{4})/);
+    return yearMatch ? parseInt(yearMatch[1]) : null;
+  }
+  
+  console.warn(`[extractYear] 无法解析日期格式: ${dateStr} (类型: ${typeof dateStr})`);
+  return null;
 }
 
 // 运行转换

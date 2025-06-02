@@ -21,214 +21,112 @@
   ],
   "vivo": [
     {
-      "name": "Vivo X90pro",
-      "releaseDate": "2023年4月18日",
+      "name": "vivo X90 Pro",
+      "releaseDate": "2022 年 12 月 6 日",
+      "level": "pro",
+      "releaseYear": 2022
+    },
+    {
+      "name": "vivo X90 Pro+",
+      "releaseDate": "2022 年 12 月 6 日",
       "level": "ultra",
+      "releaseYear": 2022
+    },
+    {
+      "name": "vivo X100 Pro",
+      "releaseDate": "2023 年 11 月 21 日",
+      "level": "pro",
       "releaseYear": 2023
     },
     {
-      "name": "Vivo X90pro+",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "Vivo X100pro",
-      "releaseDate": "2024 年 2 月 22 日",
+      "name": "vivo X100 Ultra",
+      "releaseDate": "2024 年 5 月 28 日",
       "level": "ultra",
       "releaseYear": 2024
     },
     {
-      "name": "Vivo X100ultra",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
+      "name": "vivo X200 Pro",
+      "releaseDate": "2024 年 10 月 19 日",
+      "level": "pro",
       "releaseYear": 2024
     },
     {
-      "name": "Vivo X200pro",
-      "releaseDate": "2025 年 2 月 27 日",
-      "level": "ultra",
-      "releaseYear": 2025
-    },
-    {
-      "name": "Vivo X200ultra",
-      "releaseDate": "2025 年 2 月 27 日",
+      "name": "vivo X200 Ultra",
+      "releaseDate": "2025 年 4 月 29 日",
       "level": "ultra",
       "releaseYear": 2025
     }
   ],
   "oppo": [
     {
-      "name": "Oppo findx6pro",
-      "releaseDate": "2023年4月18日",
+      "name": "OPPO Find X6 Pro",
+      "releaseDate": "2023年3月24日",
       "level": "ultra",
       "releaseYear": 2023
     },
     {
-      "name": "Oppo findx7pro",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "Oppo findx7ultra",
-      "releaseDate": "2024 年 2 月 22 日",
+      "name": "OPPO Find X7 Ultra",
+      "releaseDate": "2024年1月12日",
       "level": "ultra",
       "releaseYear": 2024
     },
     {
-      "name": "Oppo findx8pro",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
+      "name": "OPPO Find X8 Pro",
+      "releaseDate": "2024年10月24日",
+      "level": "pro",
       "releaseYear": 2024
     },
     {
-      "name": "Oppo findx8ultra",
-      "releaseDate": "2025 年 2 月 27 日",
+      "name": "OPPO Find X8 Ultra",
+      "releaseDate": "2025年4月16日",
       "level": "ultra",
       "releaseYear": 2025
     }
   ],
   "apple": [
     {
-      "name": "iPhone14pro",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "iPhone14promax",
-      "releaseDate": "2023年4月18日",
+      "name": "iPhone14pro max",
+      "releaseDate": "2023年3月24日",
       "level": "ultra",
       "releaseYear": 2023
     },
     {
       "name": "iPhone15pro",
-      "releaseDate": "2024 年 2 月 22 日",
+      "releaseDate": "2024年1月12日",
       "level": "ultra",
       "releaseYear": 2024
     },
     {
-      "name": "iPhone15promax",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
+      "name": "iPhone15pro max",
+      "releaseDate": "2024年10月24日",
+      "level": "pro",
       "releaseYear": 2024
     },
     {
-      "name": "iPhone16pro（max）",
-      "releaseDate": "2025 年 2 月 27 日",
+      "name": "iPhone16pro(max)",
+      "releaseDate": "2025年4月16日",
       "level": "ultra",
       "releaseYear": 2025
     }
   ],
   "samsung": [
     {
-      "name": "S25",
-      "releaseDate": "2023年4月18日",
+      "name": "S23 Ultra",
+      "releaseDate": "2023年3月24日",
       "level": "ultra",
       "releaseYear": 2023
     },
     {
-      "name": "S24",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "S23",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
-      "releaseYear": 2024
-    }
-  ],
-  "huawei": [
-    {
-      "name": "Mate 60pro",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "Mate 50pro",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "P60pro",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
+      "name": "S24 Ultra",
+      "releaseDate": "2024年1月12日",
+      "level": "pro",
       "releaseYear": 2024
     },
     {
-      "name": "P50pro",
-      "releaseDate": "2024 年 2 月 22 日",
+      "name": "S25 Ultra",
+      "releaseDate": "2024年10月24日",
       "level": "ultra",
       "releaseYear": 2024
-    }
-  ],
-  "honor": [
-    {
-      "name": "Magic7RSR",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "Magic7pro",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "Magic6RSR",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
-      "releaseYear": 2024
-    },
-    {
-      "name": "Magic6pro",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
-      "releaseYear": 2024
-    }
-  ],
-  "nubia": [
-    {
-      "name": "Z50ultra",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "Z50sultra",
-      "releaseDate": "2023年4月18日",
-      "level": "ultra",
-      "releaseYear": 2023
-    },
-    {
-      "name": "Z60ultra",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
-      "releaseYear": 2024
-    },
-    {
-      "name": "Z60sultra",
-      "releaseDate": "2024 年 2 月 22 日",
-      "level": "ultra",
-      "releaseYear": 2024
-    },
-    {
-      "name": "Z70ultra",
-      "releaseDate": "2025 年 2 月 27 日",
-      "level": "ultra",
-      "releaseYear": 2025
-    },
-    {
-      "name": "Z70sultra",
-      "releaseDate": "2025 年 2 月 27 日",
-      "level": "ultra",
-      "releaseYear": 2025
     }
   ]
 }
